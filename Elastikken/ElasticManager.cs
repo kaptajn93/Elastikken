@@ -31,8 +31,8 @@ namespace Elastikken
 
         }
     }
-    
-    
+
+
 
 
     public class ElasticManager
@@ -67,7 +67,7 @@ namespace Elastikken
 
             //CreateIndexDescriptor(indexName)
             //  .Mappings(ms => ms
-            //       .Map<Lemma>(m => m
+            //       .Map<LemmaDocument>(m => m
             //           .Properties(ps => ps
             //               .String(s => s
             //                   .Name(c => c.Orthography)
@@ -86,20 +86,20 @@ namespace Elastikken
             return createIndexResponse;
         }
 
-        public bool AddLemmaData(IList<Lemma> list, string indexName)
+        public bool AddLemmaDocumentData(IList<LemmaDocument> list, string indexName)
         {
-            foreach (var lemma in list)
+            foreach (var LemmaDocument in list)
             {
-                Client.Index(lemma, c =>
+                Client.Index(LemmaDocument, c =>
                     c.Index(indexName));
             }
 
             return true;
         }
 
-        public Lemma GetLemmaById(string ilexId)
+        public LemmaDocument GetLemmaDocumentById(string ilexId)
         {
-            var response = Client.Search<Lemma>(s => s
+            var response = Client.Search<LemmaDocument>(s => s
                .From(0)
                .Size(10)
                .Query(q =>
@@ -110,39 +110,42 @@ namespace Elastikken
 
         }
 
-
-
-
-
-
-
-
-
-        public Lemma GetLemmaByOrtography(string ortography)
+        public LemmaDocument GetLemmaDocumentByOrtography(string ortography)
         {
-            var response = Client.Search<Lemma>(descriptor => descriptor
+            var response = Client.Search<LemmaDocument>(descriptor => descriptor
                 .FielddataFields(fs => fs
                     .Field(f => f.Orthography)
                     .Field(f => f.IlexId))
                 //.Source(false)
-                .Query(q => 
-                    q.Bool(t => 
-                        t.Must(m => 
+                .Query(q =>
+                    q.Bool(t =>
+                        t.Must(m =>
                             //m.Term("ortography", ortography)
                             m.Term(qd => qd.Orthography, ortography)
                             )
                         )
                     )
                 );
-                    
-            
+
+
 
             return response.Documents.FirstOrDefault();
         }
 
-        public void SearchLemmaByOrtography(string ortography)
+        public void SearchLemmaDocumentByOrtography(string ortography)
         {
             throw new NotImplementedException();
+        }
+
+        public bool AddEntryData(IList<EntryDocument> list, string indexName)
+        {
+            foreach (var entry in list)
+            {
+                Client.Index(entry, c =>
+                    c.Index(indexName));
+            }
+
+            return true;
         }
     }
 }

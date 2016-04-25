@@ -23,7 +23,6 @@ namespace Elastikken
           
             var elasticManager = new ElasticManager();
 
-            elasticManager.GetLemmaById("VQpDtur6XyfVY8ahrR0");
 
           //  var response = client.Get<Lemma>(1, idx => idx.Index("da"));
 

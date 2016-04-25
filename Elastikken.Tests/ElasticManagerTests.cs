@@ -31,7 +31,7 @@ namespace Elastikken.Tests
             Assert.True(response.Acknowledged, response.ServerError?.ToString() ?? response.DebugInformation);
             //Create
             var response1 = _manager.CreateIndex(indexName);
-            _manager.Client.Map<Lemma>(ms => ms
+            _manager.Client.Map<LemmaDocument>(ms => ms
                     .AutoMap()
                     .Properties(ps => ps
                         .Nested<AccessoryData>(n => n
@@ -47,18 +47,18 @@ namespace Elastikken.Tests
                                     .Analyzer(Constants.AnalyzerNames.Keyword))
                     )
                 );
-            _manager.Client.Map<Entry>(mc => mc
+            _manager.Client.Map<EntryDocument>(mc => mc
                    .AutoMap()
-                   .Properties(pe => pe
-                       .Nested<EntryId>(ne => ne
-                           .Name(nae => nae.EntryId)
-                           .AutoMap())
-                       .Nested<Head>(nh => nh
-                           .Name(nu => nu.Head)
-                           .AutoMap())
-                       .Nested<Body>(nb => nb
-                           .Name(n => n.Body)
-                           .AutoMap()
+                   //.Properties(pe => pe
+                   //    .Nested<EntryId>(ne => ne
+                   //        .Name(nae => nae.EntryId)
+                   //        .AutoMap())
+                   //    .Nested<Head>(nh => nh
+                   //        .Name(nu => nu.Head)
+                   //        .AutoMap())
+                   //    .Nested<Body>(nb => nb
+                   //        .Name(n => n.Body)
+                   //        .AutoMap()
                            .Properties(p => p
                                .Nested<Sense>(se => se
                                    .Name(n => n.Sense)
@@ -74,15 +74,14 @@ namespace Elastikken.Tests
                                                    .Properties(pat => pat
                                                        .Nested<AnnotatedTarget>(at => at
                                                            .Name(n => n.AnnotatedTargets)
-                                                           .AutoMap())
-                                                   ))
+                                                           .AutoMap())))
                                            )
                                        )
                                    )
                                )
                            )
-                       )
-                   )
+                   //    )
+                   //)
                );
 
 
@@ -111,7 +110,7 @@ namespace Elastikken.Tests
                 )
         )
         )
-     .Mappings(ms => ms.Map<Lemma>(m => m
+     .Mappings(ms => ms.Map<LemmaDocument>(m => m
         .AutoMap()
         .Properties(ps => ps
             .Nested<AccessoryData>(n => n
@@ -133,7 +132,7 @@ namespace Elastikken.Tests
             _manager.DeleteIndex(indexName);
 
             var indexDesc = new CreateIndexDescriptor(indexName)
-     .Mappings(ms => ms.Map<Lemma>(m => m
+     .Mappings(ms => ms.Map<LemmaDocument>(m => m
         .AutoMap()
         .Properties(ps => ps
             .Nested<AccessoryData>(n => n
@@ -153,32 +152,31 @@ namespace Elastikken.Tests
 
 
 
-        [Theory]
-        [InlineData("vin", "1")]
-        //[InlineData("vinke", "2")]
-        public void CanAddDocument(string ortography, string ilexId)
-        {
-            var lemma = new Lemma
-            {
-                Orthography = ortography,
-                IlexId = ilexId
-            };
+        //[Theory]
+        //[InlineData("vin", "1")]
+        ////[InlineData("vinke", "2")]
+        //public void CanAddDocument(string ortography, string ilexId)
+        //{
+        //    var lemma = new LemmaDocument();
+        //    {
+        //        Orthography = ortography,
+        //        IlexId = ilexId
+        //    };
 
-            var testList = new List<Lemma> { lemma };
-            var lemmaAdded = _manager.AddLemmaData(testList, "da");
-            Assert.True(lemmaAdded);
+        //    var testList = new List<LemmaDocument> { LemmaDocument };
+        //    var lemmaAdded = _manager.AddLemmaDocumentData(testList, "da");
+        //    Assert.True(lemmaAdded);
 
-            //Lemma lemmaFound = _manager.GetLemmaById(ilexId);
-            //Assert.Equal(ilexId, lemmaFound.IlexId);
+        //    //Lemma lemmaFound = _manager.GetLemmaById(ilexId);
+        //    //Assert.Equal(ilexId, lemmaFound.IlexId);
 
-        }
+        //}
 
         //[Theory]
         //[InlineData("Hat", "1", "hatte")]
         //public void CanAddObject(string ortography, string ilexId, string title)
         //{
         //    List<AccessoryData> accessoryDataList = new List<AccessoryData>();
-
         //    for (int i = 0; i < 3; i++)
         //    {
         //        accessoryDataList.Add(new AccessoryData { IsActive = i % 2 == 0, Title = title + i });
@@ -195,26 +193,16 @@ namespace Elastikken.Tests
         //}
 
 
+        //[Theory]
+        //[InlineData("hat")]
+        //[InlineData("Hat")]
+        //public void GetLemmaByOrtography(string orthography)
+        //{
+        //    var lemma = _manager.GetLemmaByOrtography(orthography);
+        //    Assert.NotNull(lemma);
+        //    Assert.Equal(orthography, lemma.Orthography);
+        //}
 
-
-        [Theory]
-        [InlineData("hat")]
-        [InlineData("Hat")]
-        public void GetLemmaByOrtography(string orthography)
-        {
-            var lemma = _manager.GetLemmaByOrtography(orthography);
-            Assert.NotNull(lemma);
-            Assert.Equal(orthography, lemma.Orthography);
-
-        }
-
-        [Theory]
-        [InlineData("huse")]
-        public void CanSearchLemmaByOrtography(string ortography)
-        {
-
-            _manager.SearchLemmaByOrtography(ortography);
-        }
         //[Theory]
         //[InlineData("Hat", "1", "hatten")]
         //[InlineData("Kat", "2", "katte")]
@@ -249,85 +237,59 @@ namespace Elastikken.Tests
             //var response = _manager.DeleteIndex(indexName);
         }
 
-        //Helpers
-        //public static IList<Lemma> GenerateLemmaList()
-        //{
-        //    var list = new List<Lemma>();
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        list.Add(new Lemma
-        //        {
-        //            IlexId = i.ToString(),
-        //            Orthography = ((char)i).ToString(),
-        //            Id = "id" + i,
-        //            PosShortNameGyl = "posShort" + i,
-        //            AccessoryDatas = new List<AccessoryData>
-        //            {
-        //                new AccessoryData { IsActive = i%2 == 0, Title = "AD" + i}
-        //            },
-        //        });
-        //    }
-        //    list.Add(new Lemma
-        //    {
-        //        Orthography = "kimchy"
-        //    });
-        //    return list;
-        //}
 
-        public IList<Entry> GenerateEntries()
-        {
-            var entryList = new List<Entry>
-            {
-                new Entry {
-                    Blob = "",
-                    EntryId = new EntryId
-                    {
-                        idBook = full-label="GYLDENDALS RØDE" short-label="RØD" icon="gyldendal-logo.jpg">daen-rød,
-                        idLemma = lemma-pos="vb." lemma-ref="bage" lemma-description-ref="om bagværk" lemmaid-ref="dale0010415",
-                        idEntry = "daenrød0004332"
-                    }
-                    Head = new Head
-                    {
-                        headPos = "",
-                        headWord = ""
-                    },
-                    Body = new Body
-                    {
-                        reference = "",
-                        Sense = new Sense
-                        {
-                            Subsenses = new List<Subsense>
-                            {
-                                new Subsense
-                                {
-                                    TGroups = new List<TargetGroup>
-                                    {
-                                        new TargetGroup
-                                        {
-                                            AnnotatedTargets = new List<AnnotatedTarget>
-                                            {
-                                                new AnnotatedTarget
-                                                {
-                                                    translation = "",
-                                                    examples = new List<string>(),
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            };
-            return entryList;
-        }
 
-        public IList<Lemma> GenerateLemmaList2()
+    //    public IList<EntryDocument> GenerateEntries()
+    //    {
+    //        var entryList = new List<EntryDocument>
+    //        {
+    //            new EntryDocument {
+    //                Blob = "",
+    //                EntryId = new EntryId
+    //                {
+    //                    idBook = "daen-rød",
+    //                    idLemmaPos = "vb.",
+    //                    idLemmaRef = "bage",
+    //                    idLemmaDescriptionRef = "om bagværk",
+    //                    lemmaIdRef = "dale0010415",
+    //                    idEntry = "daenrød0004332"
+    //                },
+    //                Head = new Head
+    //                {
+    //                    headWord = "bage",
+    //                    headPosShortNameGyl ="vb.",
+    //},
+    //                Body = new Body
+    //                {
+    //                    headWordRef = "bagende",
+    //                    Sense = new Sense{
+    //                        Subsenses = new List<Subsense>{
+    //                            new Subsense{
+    //                                TGroups = new List<TargetGroup>{
+    //                                    new TargetGroup{
+    //                                        AnnotatedTargets = new List<AnnotatedTarget>{
+    //                                            new AnnotatedTarget{
+    //                                                translation = "bake",
+    //                                                examples = new List<string>(),
+                                                     
+    //                                            }
+    //                                        }
+    //                                    }
+    //                                }
+    //                            }
+    //                        }
+    //                    }
+    //                }
+    //            }
+    //        };
+    //        return entryList;
+    //    }
+
+        public IList<LemmaDocument> GenerateLemmaList2()
         {
-            var list = new List<Lemma>
+            var list = new List<LemmaDocument>
             {
-                new Lemma
+                new LemmaDocument()
                 {
                     IlexId = "dale0268737",
                     Orthography = "forundringsudbrud",
@@ -385,22 +347,27 @@ namespace Elastikken.Tests
                         }
                     }
                 },
-
               };
             return list;
         }
+
         [Fact]
-        public void CanAddList()
+        public void CanAddLemmaList()
         {
             var list = GenerateLemmaList2();
-            var tryAddLemma = _manager.AddLemmaData(list, "da");
+            var tryAddLemma = _manager.AddLemmaDocumentData(list, "da");
             Assert.True(tryAddLemma);
 
-
-            var entry = new Entry();
-            entry.Blob = JsonConvert.SerializeObject(entry);
         }
+        //[Fact]
+        //public void CanAddEntryList()
+        //{
+        //    var list = GenerateEntries();
+        //    var tryAddEntry = _manager.AddEntryData(list, "da");
+        //    Assert.True(tryAddEntry);
 
-
+        //    //var entry = new Entry();
+        //    //entry.Blob = JsonConvert.SerializeObject(entry);
+        //}
     }
 }

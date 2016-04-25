@@ -8,7 +8,7 @@ using Nest;
 namespace Elastikken
 {
     //[ElasticsearchType(Name = "lemma")]
-    public class Lemma
+    public class LemmaDocument
     {
         //    [String(Analyzer = "keyword", NullValue = "null")]
         public string Id { get; set; }

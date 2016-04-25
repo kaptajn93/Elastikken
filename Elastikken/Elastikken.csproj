@@ -58,9 +58,18 @@
     <Compile Include="AccessoryData.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="ElasticManager.cs" />
-    <Compile Include="Entry.cs" />
+    <Compile Include="EntryDocument.cs" />
     <Compile Include="Inflection.cs" />
     <Compile Include="Lemma.cs" />
+    <Compile Include="Parsing\EntryAnnotatedTargetElement.cs" />
+    <Compile Include="Parsing\EntryElement.cs" />
+    <Compile Include="Parsing\EntryParser.cs" />
+    <Compile Include="Parsing\EntrySenseElement.cs" />
+    <Compile Include="Parsing\EntryTargetGroupElement.cs" />
+    <Compile Include="Parsing\ParserBase.cs" />
+    <Compile Include="Parsing\ParsingException.cs" />
+    <Compile Include="Parsing\Extensions\XElementExtensionMethods.cs" />
+    <Compile Include="Parsing\EntrySubsenseElement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
