@@ -31,10 +31,10 @@ namespace Elastikken.Parsing
 
                 id.Element("book").WhenNotNull(i =>
                 {
-                    Icon = i.AttributeValueOrDefault("icon");
-                    FullLabel = i.AttributeValueOrDefault("full-label");
-                    ShortLabel = i.AttributeValueOrDefault("short-label");
-                    BookIllustrationType = i.AttributeValueOrDefault("ill-type");
+                    //Icon = i.AttributeValueOrDefault("icon");
+                    //FullLabel = i.AttributeValueOrDefault("full-label");
+                    //ShortLabel = i.AttributeValueOrDefault("short-label");
+                    //BookIllustrationType = i.AttributeValueOrDefault("ill-type");
                 });
 
                 // TODO: Handle multiple id-lemmas?
@@ -47,16 +47,16 @@ namespace Elastikken.Parsing
                     IdLemmaLemmaIdRef = i.AttributeValueOrDefault("lemmaid-ref");
                 });
 
-                Unbound = (id.Element("unbound") != null);
+               // Unbound = (id.Element("unbound") != null);
 
                 // TODO: Handle multiple prioritize-when-lemma's?
                 id.Element("prioritize-when-lemma").WhenNotNull(pri =>
                 {
                     //PrioritizeWhenLemmaLemmaId
-                    PrioritizeWhenLemmaLemmaPos = pri.AttributeValueOrDefault("lemma-pos");
-                    PrioritizeWhenLemmaLemmaRef = pri.AttributeValueOrDefault("lemma-ref");
-                    PrioritizeWhenLemmaLemmaDescription = pri.AttributeValueOrDefault("lemma-description-ref");
-                    PrioritizeWhenLemmaLemmaIdRef = pri.AttributeValueOrDefault("lemmaid-ref");
+                    //PrioritizeWhenLemmaLemmaPos = pri.AttributeValueOrDefault("lemma-pos");
+                    //PrioritizeWhenLemmaLemmaRef = pri.AttributeValueOrDefault("lemma-ref");
+                    //PrioritizeWhenLemmaLemmaDescription = pri.AttributeValueOrDefault("lemma-description-ref");
+                    //PrioritizeWhenLemmaLemmaIdRef = pri.AttributeValueOrDefault("lemmaid-ref");
                 });
             });
         }
@@ -77,14 +77,14 @@ namespace Elastikken.Parsing
         {
             entryElement.Element("body").WhenNotNull(b =>
             {
-                BodyTargetNode = b.AttributeValueOrDefault("target-nod-id");
+             //   BodyTargetNode = b.AttributeValueOrDefault("target-nod-id");
 
                 b.Element("reference").WhenNotNull(r =>
                 {
-                    BodyRefType = r.AttributeValueOrDefault("reference-type");
-                    BodyBookRef = r.AttributeValueOrDefault("book-ref");
-                    BodyNodeRef = r.AttributeValueOrDefault("node-ref");
-                    BodyHeadwordRef = r.ChildElementValueOrDefault<string>("headword-ref");
+                    //BodyRefType = r.AttributeValueOrDefault("reference-type");
+                    //BodyBookRef = r.AttributeValueOrDefault("book-ref");
+                    //BodyNodeRef = r.AttributeValueOrDefault("node-ref");
+                    //BodyHeadwordRef = r.ChildElementValueOrDefault<string>("headword-ref");
                   
                     //BodyHeadwordRef = r
                     //    .Elements("headword-ref")
@@ -100,7 +100,7 @@ namespace Elastikken.Parsing
         }
 
         #region --- ID: -- 
-
+     
             #region ---ID LEMMA----
         public string IdLemmaLemmaIdRef { get; set; }
 
@@ -109,59 +109,64 @@ namespace Elastikken.Parsing
         public string IdLemmaLemmaRef { get; set; }
 
         public string IdLemmaLemmaPos { get; set; }
-
-        public string PrioritizeWhenLemmaLemmaIdRef { get; set; }
-
-        public string PrioritizeWhenLemmaLemmaDescription { get; set; }
-
-        public string PrioritizeWhenLemmaLemmaRef { get; set; }
-
-        public string PrioritizeWhenLemmaLemmaPos { get; set; } 
-        
         #endregion
-
-        public bool Unbound { get; set; }
-
-        public string BookIllustrationType { get; set; }
-
-        public string ShortLabel { get; set; }
-
-        public string FullLabel { get; set; }
-
-        public string Icon { get; set; }
 
         public string BookId { get; set; }
 
         public string Id { get; set; }
-
         #endregion
 
         #region ---head---
         public string HeadPosShortNameGyl { get; set; }
 
         public string HeadWordExact { get; set; }
-
-        public int HeadWordLength { get; set; }
-
         #endregion
 
         #region --- BODY: --- 
-
-        public string BodyTargetNode { get; set; }
-
-        public string BodyHeadwordRef { get; set; }
-
-        public string BodyNodeRef { get; set; }
-
-        public string BodyBookRef { get; set; }
-
-        public string BodyRefType { get; set; }
 
         public IList<EntrySenseElement> BodySenses { get; set; }
 
 
         #endregion
-       
+
+        #region ---BLOB---
+
+        //public bool Unbound { get; set; }
+
+        //public string BookIllustrationType { get; set; }
+
+        //public string ShortLabel { get; set; }
+
+        //public string FullLabel { get; set; }
+
+        //public string Icon { get; set; } 
+
+        ////lemmaID
+        //public string PrioritizeWhenLemmaLemmaIdRef { get; set; }
+
+        //public string PrioritizeWhenLemmaLemmaDescription { get; set; }
+
+        //public string PrioritizeWhenLemmaLemmaRef { get; set; }
+
+        //public string PrioritizeWhenLemmaLemmaPos { get; set; }
+
+        ////head
+        //public int HeadWordLength { get; set; }
+
+        ////body
+        //public string BodyTargetNode { get; set; }
+
+        //public string BodyHeadwordRef { get; set; }
+
+        //public string BodyNodeRef { get; set; }
+
+        //public string BodyBookRef { get; set; }
+
+        //public string BodyRefType { get; set; }
+
+        #endregion
+
+
     }
 
 }

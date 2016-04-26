@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting;
 using System.Xml.Linq;
 using Elastikken.Parsing;
 using Nest;
@@ -13,6 +14,7 @@ namespace Elastikken.Tests
     public class EntryParserTests : IDisposable
     {
         EntryParser _parser;
+        ElasticManager _manager;
 
         #region --- TEST DATA: ---
 
@@ -106,6 +108,7 @@ namespace Elastikken.Tests
         public EntryParserTests()
         {
             _parser = new EntryParser();
+            _manager = new ElasticManager();
         }
 
         [Fact]
@@ -176,23 +179,6 @@ namespace Elastikken.Tests
             Assert.NotNull(entry);
             Assert.Equal(expected, entry.HeadPosShortNameGyl);
         }
-        [Fact]
-        public void CanParseIdLemma()
-        {
-            // Arrange
-            var element = XElement.Parse(Xml);
-            var elements = new List<XElement> { element };
-
-            // Act
-            var documents = _parser.ParseXml(elements);
-            var entry = documents.FirstOrDefault();
-
-            // Asssert:
-            var expected = "vb.";
-
-            Assert.NotNull(entry);
-            Assert.Equal(expected, entry.EntryIdLemma.IdLemmaPos);
-        }
 
         [Fact]
         public void CanParseSenseCount()
@@ -227,7 +213,7 @@ namespace Elastikken.Tests
             var expected = "bagende";
 
             Assert.NotNull(entry);
-            Assert.Equal(expected, entry.BodyHeadWordRef);
+           // Assert.Equal(expected, entry.BodyHeadWordRef);
         }
 
         //her
@@ -241,14 +227,13 @@ namespace Elastikken.Tests
             // Act
             var documents = _parser.ParseXml(elements);
             var entry = documents.FirstOrDefault();
-            var entryElement = entry.EntryElement;
 
             // Asssert:
             var expected = 3;
             var expectedCount = 0;
-            for (int i = 0; i < entryElement.BodySenses.Count; i++)
+            for (int i = 0; i < entry.Sense.Count; i++)
             {
-                expectedCount += entryElement.BodySenses[i].Subsense.Count;
+                expectedCount += entry.Sense[i].Subsense.Count;
             }
 
             Assert.NotNull(entry);
@@ -277,29 +262,41 @@ namespace Elastikken.Tests
             
         }
 
+        [Fact]
+        public void CanParseSenseExamplesCount()
+        {
+            // Arrange
+            var element = XElement.Parse(Xml);
+            var elements = new List<XElement> { element };
 
+            // Act
+            var documents = _parser.ParseXml(elements);
+            var entry = documents.FirstOrDefault();
 
+            // Asssert:
+            var expected = 3;
+            Assert.NotNull(entry);
+            Assert.Equal(expected, entry.Sense[0].Subsense[0].TargetGroups[0].AnnotatedTargets[0].Examples.Count);
+        }
 
+        [Fact]
+        public void CanParseSenseExamplesCountFromBlob()
+        {
+            // Arrange
+            var element = XElement.Parse(Xml);
+            var elements = new List<XElement> { element };
 
-        //fix her 
-        //[Fact]
-        //public void CanParseSenseExamplesCount()
-        //{
-        //    // Arrange
-        //    var element = XElement.Parse(Xml);
-        //    var elements = new List<XElement> { element };
+            // Act
+            var documents = _parser.ParseXml(elements);
+            var entry = documents.FirstOrDefault();
+            var entryElement = entry.GetDeserializedBlobAndDeleteBlob();
 
-        //    // Act
-        //    var documents = _parser.ParseXml(elements);
-        //    var entry = documents.FirstOrDefault();
-        //    var entryElement = entry.EntryElement;
-
-        //    // Asssert:
-        //    var expected = 3;
-
-        //    Assert.NotNull(entry);
-        //    Assert.Equal(expected, entryElement.BodySenses[1].Subsense[1].TargetGroups[1].AnnotatedTargets[1].Examples.Count);
-        //}
+            // Asssert:
+            var expected = 3;
+            Assert.NotNull(entry);
+            Assert.NotNull(entryElement);
+            Assert.Equal(expected, entryElement.BodySenses[0].Subsense[0].TargetGroups[0].AnnotatedTargets[0].Examples.Count);
+        }
 
 
         [Fact]
@@ -311,7 +308,7 @@ namespace Elastikken.Tests
             // Act
             var documents = _parser.ParseXml(elements);
             var entry = documents.FirstOrDefault();
-            var expectedSensesCount = entry.EntryElement.BodySenses.Count; 
+            var expectedSensesCount = entry.Sense.Count; 
             var entryElement = entry.GetDeserializedBlobAndDeleteBlob();
             
             // Asssert:
@@ -323,7 +320,44 @@ namespace Elastikken.Tests
            // Assert.Equal(expected, entry.IdEntry);
         }
 
+        [Fact]
+        public void CanParsAndPostToELASTIC()
+        {
+            var client = new ElasticClient();
+            // Arrange
+            var element = XElement.Parse(Xml);
+            var elements = new List<XElement> { element };
+            // Act
+            var documents = _parser.ParseXml(elements);
+            var entry = documents.FirstOrDefault();
 
+            var indexName = "da";
+            //- - - - - - - - - -- --- -- -  - -- - - - - - -- -- - - -
+          
+                client.Index(entry, c =>
+                    c.Index(indexName));
+
+            Assert.NotNull(entry);
+
+        }
+
+        [Fact]
+        public void CanAddEntryList()
+        {
+            var client = new ElasticClient();
+            // Arrange
+            var element = XElement.Parse(Xml);
+            var elements = new List<XElement> { element };
+            // Act
+            var documents = _parser.ParseXml(elements);
+            var entryDocuments = documents as IList<EntryDocument> ?? documents.ToList();
+
+            var tryAddEntry = _manager.AddEntryData(entryDocuments, "da");
+
+            Assert.NotNull(tryAddEntry);
+            Assert.True(tryAddEntry);
+
+        }
 
         public void Dispose()
         {

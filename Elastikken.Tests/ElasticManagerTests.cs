@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Elastikken.Parsing;
 using Nest;
 using Newtonsoft.Json;
 using Xunit;
@@ -49,16 +50,18 @@ namespace Elastikken.Tests
                 );
             _manager.Client.Map<EntryDocument>(mc => mc
                    .AutoMap()
-                   //.Properties(pe => pe
-                   //    .Nested<EntryId>(ne => ne
-                   //        .Name(nae => nae.EntryId)
-                   //        .AutoMap())
-                   //    .Nested<Head>(nh => nh
-                   //        .Name(nu => nu.Head)
-                   //        .AutoMap())
-                   //    .Nested<Body>(nb => nb
-                   //        .Name(n => n.Body)
-                   //        .AutoMap()
+            #region ---Nested entryID/Head/Body
+                           //.Properties(pe => pe
+                           //    .Nested<EntryId>(ne => ne
+                           //        .Name(nae => nae.EntryId)
+                           //        .AutoMap())
+                           //    .Nested<Head>(nh => nh
+                           //        .Name(nu => nu.Head)
+                           //        .AutoMap())
+                           //    .Nested<Body>(nb => nb
+                           //        .Name(n => n.Body)
+                           //        .AutoMap() 
+            #endregion
                            .Properties(p => p
                                .Nested<Sense>(se => se
                                    .Name(n => n.Sense)
@@ -80,8 +83,6 @@ namespace Elastikken.Tests
                                    )
                                )
                            )
-                   //    )
-                   //)
                );
 
 
@@ -149,7 +150,6 @@ namespace Elastikken.Tests
     );
             _manager.Client.CreateIndex(indexDesc);
         }
-
 
 
         //[Theory]
@@ -231,59 +231,57 @@ namespace Elastikken.Tests
         //    Assert.True(lemmaAdded);
         //}
 
-
         public void Dispose()
         {
             //var response = _manager.DeleteIndex(indexName);
         }
 
 
+        //    public IList<EntryDocument> GenerateEntries()
+        //    {
+        //        var entryList = new List<EntryDocument>
+        //        {
+        //            new EntryDocument {
+        //                Blob = "",
+        //                EntryId = new EntryId
+        //                {
+        //                    idBook = "daen-rød",
+        //                    idLemmaPos = "vb.",
+        //                    idLemmaRef = "bage",
+        //                    idLemmaDescriptionRef = "om bagværk",
+        //                    lemmaIdRef = "dale0010415",
+        //                    idEntry = "daenrød0004332"
+        //                },
+        //                Head = new Head
+        //                {
+        //                    headWord = "bage",
+        //                    headPosShortNameGyl ="vb.",
+        //},
+        //                Body = new Body
+        //                {
+        //                    headWordRef = "bagende",
+        //                    Sense = new Sense{
+        //                        Subsenses = new List<Subsense>{
+        //                            new Subsense{
+        //                                TGroups = new List<TargetGroup>{
+        //                                    new TargetGroup{
+        //                                        AnnotatedTargets = new List<AnnotatedTarget>{
+        //                                            new AnnotatedTarget{
+        //                                                translation = "bake",
+        //                                                examples = new List<string>(),
 
-    //    public IList<EntryDocument> GenerateEntries()
-    //    {
-    //        var entryList = new List<EntryDocument>
-    //        {
-    //            new EntryDocument {
-    //                Blob = "",
-    //                EntryId = new EntryId
-    //                {
-    //                    idBook = "daen-rød",
-    //                    idLemmaPos = "vb.",
-    //                    idLemmaRef = "bage",
-    //                    idLemmaDescriptionRef = "om bagværk",
-    //                    lemmaIdRef = "dale0010415",
-    //                    idEntry = "daenrød0004332"
-    //                },
-    //                Head = new Head
-    //                {
-    //                    headWord = "bage",
-    //                    headPosShortNameGyl ="vb.",
-    //},
-    //                Body = new Body
-    //                {
-    //                    headWordRef = "bagende",
-    //                    Sense = new Sense{
-    //                        Subsenses = new List<Subsense>{
-    //                            new Subsense{
-    //                                TGroups = new List<TargetGroup>{
-    //                                    new TargetGroup{
-    //                                        AnnotatedTargets = new List<AnnotatedTarget>{
-    //                                            new AnnotatedTarget{
-    //                                                translation = "bake",
-    //                                                examples = new List<string>(),
-                                                     
-    //                                            }
-    //                                        }
-    //                                    }
-    //                                }
-    //                            }
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //        };
-    //        return entryList;
-    //    }
+        //                                            }
+        //                                        }
+        //                                    }
+        //                                }
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        };
+        //        return entryList;
+        //    }
 
         public IList<LemmaDocument> GenerateLemmaList2()
         {
@@ -359,15 +357,60 @@ namespace Elastikken.Tests
             Assert.True(tryAddLemma);
 
         }
-        //[Fact]
-        //public void CanAddEntryList()
-        //{
-        //    var list = GenerateEntries();
-        //    var tryAddEntry = _manager.AddEntryData(list, "da");
-        //    Assert.True(tryAddEntry);
 
-        //    //var entry = new Entry();
-        //    //entry.Blob = JsonConvert.SerializeObject(entry);
-        //}
+        public IList<EntryDocument> GenerateEntryList()
+        {
+            var list = new List<EntryDocument>
+            {
+                new EntryDocument()
+                {
+                    IdEntry = "idEntryIDDD",
+                    IdBook = "idBookID",
+                    HeadPosShortNameGyl = "SHORTNAMEGYL",
+                    HeadWord = "HEADWORD",
+                    SenseCount = 1,
+                    Blob = "Blobiblob",
+                    Sense = new List<EntrySenseElement>
+                    {
+                        new EntrySenseElement()
+                        {
+                            TargetNodeId = "SenseNodeID",
+                            Subsense = new List<EntrySubsenseElement>
+                            {
+                             new EntrySubsenseElement
+                                {
+                                    TargetNodeId = "SubNodeID",
+                                    TargetGroups = new List<EntryTargetGroupElement>
+                                    {
+                                        new EntryTargetGroupElement
+                                        {
+                                            AnnotatedTargets = new List<EntryAnnotatedTargetElement>
+                                            {
+                                              new EntryAnnotatedTargetElement
+                                              {
+                                                  Translation = "Baked",
+                                                  Examples = new List<string>()
+                                              }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            return list;
+        }
+
+        [Fact]
+public void CanAddEntryList()
+{
+
+    var list = GenerateEntryList();
+    var tryAddLemma = _manager.AddEntryData(list, "da");
+    Assert.True(tryAddLemma);
+
+}
     }
 }

@@ -36,22 +36,21 @@ namespace Elastikken.Parsing
                               IdEntry = entry.Id,
                               IdBook = entry.BookId,
                               //idLemma
-                              EntryIdLemma = new EntryIdLemma
-                              {
-                                  IdLemmaPos = entry.IdLemmaLemmaPos,
-                                  IdLemmaRef = entry.IdLemmaLemmaRef,
-                                  IdLemmaDescriptionRef = entry.IdLemmaLemmaDescriptionRef,
-                                  LemmaIdRef = entry.IdLemmaLemmaIdRef,
-                              },
+                                    //EntryIdLemma = new EntryIdLemma
+                                    //{
+                                    //    IdLemmaPos = entry.IdLemmaLemmaPos,
+                                    //    IdLemmaRef = entry.IdLemmaLemmaRef,
+                                    //    IdLemmaDescriptionRef = entry.IdLemmaLemmaDescriptionRef,
+                                    //    LemmaIdRef = entry.IdLemmaLemmaIdRef,
+                                    //},
                               //head
                               HeadWord = entry.HeadWordExact,
                               HeadPosShortNameGyl = entry.HeadPosShortNameGyl,
                               //body
                               SenseCount = entry.BodySenses?.Count ?? 0,
-                              //Sense = entry.BodySenses,
+                              Sense = entry.BodySenses,
                               SubsenseCount = sense.Subsense?.Count ?? 0, 
-                              BodyHeadWordRef = entry.BodyHeadwordRef,
-                              ATExamples = ano.Examples,
+                              //BodyHeadWordRef = entry.BodyHeadwordRef,
                               //blob
                               Blob = JsonConvert.SerializeObject(entry),
 
@@ -88,7 +87,7 @@ namespace Elastikken.Parsing
 
 
 
-                              EntryElement = entry
+                              //EntryElement = entry
 
                               //FeedImportFileName = filename != null ? filename.Value : "N/A"
                           };

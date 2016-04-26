@@ -11,7 +11,8 @@ namespace Elastikken.Parsing
     {
         public EntryAnnotatedTargetElement()
         {
-            Examples = new List<string>();            
+            Examples = new List<string>();
+                        
         }
 
 
@@ -52,7 +53,7 @@ namespace Elastikken.Parsing
 
         public string Translation { get; set; }
 
-        public IList<string> Examples { get; set; }
+        public List<string> Examples { get; set; }
 
         public object TranslationGramLemmaIdRef { get; set; }
 
