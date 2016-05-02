@@ -18,7 +18,7 @@ namespace Elastikken.Parsing
         public EntrySubsenseElement(XElement subsenseXElement) : this()
         {
 
-            //TargetNodeId = subsenseXElement.AttributeValueOrDefault("target-node-id");
+            TargetNodeId = subsenseXElement.AttributeValueOrDefault("target-node-id");
             //References = subsenseXElement.ChildXElementsOfExtensionType<EntrySubsenseElement>("references",
             //    x => new  );
             TargetGroups = subsenseXElement.ChildXElementsOfExtensionType("target-group",

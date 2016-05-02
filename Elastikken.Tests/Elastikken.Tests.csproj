@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="EntryParserTests.cs" />
     <Compile Include="ElasticManagerTests.cs" />
+    <Compile Include="LemmaParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

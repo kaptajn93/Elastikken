@@ -64,25 +64,6 @@ namespace Elastikken
         public ICreateIndexResponse CreateIndexWithMapping(string indexName)
         {
             var createIndexResponse = Client.CreateIndex(indexName);
-
-            //CreateIndexDescriptor(indexName)
-            //  .Mappings(ms => ms
-            //       .Map<LemmaDocument>(m => m
-            //           .Properties(ps => ps
-            //               .String(s => s
-            //                   .Name(c => c.Orthography)
-            //               )
-            //               .Object<AccessoryData>(o => o
-            //                   .Name(c => c.AccessoryDatas)
-            //                   .Properties(eps => eps
-            //                       .String(s => s
-            //                           .Name(e => e.Title)
-            //                       )
-            //                   )
-            //               )
-            //           )
-            //       )
-            //   );
             return createIndexResponse;
         }
 
@@ -93,44 +74,43 @@ namespace Elastikken
                 Client.Index(LemmaDocument, c =>
                     c.Index(indexName));
             }
-
             return true;
         }
 
-        public LemmaDocument GetLemmaDocumentById(string ilexId)
+        public LemmaDocument GetLemmaDocumentById(string lemmaId)
         {
             var response = Client.Search<LemmaDocument>(s => s
                .From(0)
                .Size(10)
                .Query(q =>
-                    q.Term(p => p.Id, ilexId)
+                    q.Term(p => p.LemmaId, lemmaId)
                 )
            );
             return response.Documents.FirstOrDefault();
 
         }
 
-        public LemmaDocument GetLemmaDocumentByOrtography(string ortography)
-        {
-            var response = Client.Search<LemmaDocument>(descriptor => descriptor
-                .FielddataFields(fs => fs
-                    .Field(f => f.Orthography)
-                    .Field(f => f.IlexId))
-                //.Source(false)
-                .Query(q =>
-                    q.Bool(t =>
-                        t.Must(m =>
-                            //m.Term("ortography", ortography)
-                            m.Term(qd => qd.Orthography, ortography)
-                            )
-                        )
-                    )
-                );
+        //public LemmaDocument GetLemmaDocumentByOrtography(string ortography)
+        //{
+        //    var response = Client.Search<LemmaDocument>(descriptor => descriptor
+        //        .FielddataFields(fs => fs
+        //            .Field(f => f.LemmaOrtography)
+        //            .Field(f => f.IlexId))
+        //        //.Source(false)
+        //        .Query(q =>
+        //            q.Bool(t =>
+        //                t.Must(m =>
+        //                    //m.Term("ortography", ortography)
+        //                    m.Term(qd => qd.Orthography, ortography)
+        //                    )
+        //                )
+        //            )
+        //        );
 
 
 
-            return response.Documents.FirstOrDefault();
-        }
+        //    return response.Documents.FirstOrDefault();
+        //}
 
         public void SearchLemmaDocumentByOrtography(string ortography)
         {
@@ -139,9 +119,9 @@ namespace Elastikken
 
         public bool AddEntryData(IList<EntryDocument> list, string indexName)
         {
-            foreach (var entry in list)
+            foreach (var entrydocument in list)
             {
-                Client.Index(entry, c =>
+                Client.Index(entrydocument, c =>
                     c.Index(indexName));
             }
 

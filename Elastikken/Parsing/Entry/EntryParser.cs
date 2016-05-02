@@ -11,11 +11,11 @@ namespace Elastikken.Parsing
     public class EntryParser : ParserBase<EntryDocument>
     {
 
+        
         public override IEnumerable<EntryDocument> ParseXml(IEnumerable<XElement> elements)
         {
             var entries = from entryXElement in elements
                           let entry = new EntryElement(entryXElement)
-                          let ano = new EntryAnnotatedTargetElement(entryXElement)
                           let sense = new EntrySenseElement(entryXElement)
                           let sub = new EntrySubsenseElement(entryXElement)
 
@@ -36,20 +36,19 @@ namespace Elastikken.Parsing
                               IdEntry = entry.Id,
                               IdBook = entry.BookId,
                               //idLemma
-                                    //EntryIdLemma = new EntryIdLemma
-                                    //{
-                                    //    IdLemmaPos = entry.IdLemmaLemmaPos,
-                                    //    IdLemmaRef = entry.IdLemmaLemmaRef,
-                                    //    IdLemmaDescriptionRef = entry.IdLemmaLemmaDescriptionRef,
-                                    //    LemmaIdRef = entry.IdLemmaLemmaIdRef,
-                                    //},
+                              EntryIdLemma = new EntryIdLemma
+                              {
+                                  IdLemmaPos = entry.IdLemmaLemmaPos,
+                                  IdLemmaRef = entry.IdLemmaLemmaRef,
+                                  IdLemmaDescriptionRef = entry.IdLemmaLemmaDescriptionRef,
+                                  LemmaIdRef = entry.IdLemmaLemmaIdRef,
+                              },
                               //head
                               HeadWord = entry.HeadWordExact,
                               HeadPosShortNameGyl = entry.HeadPosShortNameGyl,
                               //body
                               SenseCount = entry.BodySenses?.Count ?? 0,
-                              Sense = entry.BodySenses,
-                              SubsenseCount = sense.Subsense?.Count ?? 0, 
+                              //Sense = entry.BodySenses,
                               //BodyHeadWordRef = entry.BodyHeadwordRef,
                               //blob
                               Blob = JsonConvert.SerializeObject(entry),

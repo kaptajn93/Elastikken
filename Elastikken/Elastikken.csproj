@@ -55,21 +55,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessoryData.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="ElasticManager.cs" />
     <Compile Include="EntryDocument.cs" />
-    <Compile Include="Inflection.cs" />
-    <Compile Include="Lemma.cs" />
-    <Compile Include="Parsing\EntryAnnotatedTargetElement.cs" />
-    <Compile Include="Parsing\EntryElement.cs" />
-    <Compile Include="Parsing\EntryParser.cs" />
-    <Compile Include="Parsing\EntrySenseElement.cs" />
-    <Compile Include="Parsing\EntryTargetGroupElement.cs" />
+    <Compile Include="LemmaDocument.cs" />
+    <Compile Include="Parsing\Entry\EntryAnnotatedTargetElement.cs" />
+    <Compile Include="Parsing\Entry\EntryElement.cs" />
+    <Compile Include="Parsing\Entry\EntryParser.cs" />
+    <Compile Include="Parsing\Entry\EntrySenseElement.cs" />
+    <Compile Include="Parsing\Entry\EntryTargetGroupElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaAccessoryDataElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaGenderElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaInflectedCategoryElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaInflectedFormElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaInflectionElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaParser.cs" />
+    <Compile Include="Parsing\Lemma\LemmaPosElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaSearchableParadigmElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaTablePresElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaTableRowElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaVariantsElement.cs" />
     <Compile Include="Parsing\ParserBase.cs" />
     <Compile Include="Parsing\ParsingException.cs" />
     <Compile Include="Parsing\Extensions\XElementExtensionMethods.cs" />
-    <Compile Include="Parsing\EntrySubsenseElement.cs" />
+    <Compile Include="Parsing\Entry\EntrySubsenseElement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +88,12 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Parsing\EntryData.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Parsing\LemmaData.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

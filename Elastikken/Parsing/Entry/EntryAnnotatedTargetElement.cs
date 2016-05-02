@@ -14,29 +14,25 @@ namespace Elastikken.Parsing
             Examples = new List<string>();
                         
         }
-
-
-
         public EntryAnnotatedTargetElement(XElement anTXElement)
         {
 
          anTXElement.Element("translation").WhenNotNull(trans =>
            {
-               Translation = trans.InnerXmlOrDefault();
+              // Translation = trans.InnerXmlOrDefault();
+               Translation = trans.InnerXmlExcludingElements("gram");
 
                #region ---if you want Gram---
-               //    Translation = trans.InnerXmlOrDefault();
-               //trans.Element("gram").WhenNotNull(g =>
-               //{
-               //    TranslationGram = g.InnerXmlOrDefault();
-               //    TranslationGramLemmaPos = g.AttributeValueOrDefault("lemma-pos");
-               //    TranslationGramLemmaRef = g.AttributeValueOrDefault("lemma-ref");
-               //    TranslationGramLemmaDescriptionRef = g.AttributeValueOrDefault("lemma-description-ref");
-               //    TranslationGramLemmaLang = /*LanguageIsoCodeMap.GetIsoCode(*/ g.AttributeValueOrDefault("lemma-lang");
-               //    TranslationGramLemmaIdRef = g.AttributeValueOrDefault("lemmaid-ref");
-               //    Translation = g
+               trans.Element("gram").WhenNotNull(g =>
+               {
+                   TranslationGram = g.InnerXmlOrDefault();
+                   TranslationGramLemmaPos = g.AttributeValueOrDefault("lemma-pos");
+                   TranslationGramLemmaRef = g.AttributeValueOrDefault("lemma-ref");
+                   TranslationGramLemmaDescriptionRef = g.AttributeValueOrDefault("lemma-description-ref");
+                   TranslationGramLemmaLang = /*LanguageIsoCodeMap.GetIsoCode(*/ g.AttributeValueOrDefault("lemma-lang");
+                   TranslationGramLemmaIdRef = g.AttributeValueOrDefault("lemmaid-ref");
 
-               //}); 
+               });
                #endregion
            }
         );

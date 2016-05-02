@@ -20,7 +20,7 @@ namespace Elastikken.Parsing
 
 
         public abstract IEnumerable<T> ParseXml(IEnumerable<string> xmlFilesToImport);
-        public abstract IEnumerable<EntryDocument> ParseXml(IEnumerable<XElement> elements);
+        public abstract IEnumerable<T> ParseXml(IEnumerable<XElement> elements);
 
 
         protected IEnumerable<XElement> StreamElements(IEnumerable<string> xmlFilesToImport)

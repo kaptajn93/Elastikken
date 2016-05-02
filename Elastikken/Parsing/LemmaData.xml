@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<lemma language="dan" lemid="dale0268738">
+  <ortography>idé</ortography>
+  <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
+  <gender name-dan="fælleskøn" name-gyl="fælleskøn" name-eng="common gender" name-lat="utrum" short-name-dan="fk." short-name-gyl="fk." short-name-eng="common gender" short-name-lat="ut."/>
+  <inflection>
+    <searchable-paradigm>
+      <inflected-form leave-out="true">
+        <inflection-category name-dan="ental ubestemt" name-gyl="singularis ubestemt" name-eng="singular indefinite" name-lat="singularis ubestemt" short-name-dan="ent.ubf." short-name-gyl="sg.ubf." short-name-eng="sing.indef." short-name-lat="sg.ubf."/>
+        <full-form>idé</full-form>
+        <compact-form>idé</compact-form>
+      </inflected-form>
+      <inflected-form>
+        <inflection-category name-dan="ental ubestemt, ejefald" name-gyl="singularis ubestemt, genitiv" name-eng="singular indefinite, genitive" name-lat="singularis ubestemt, genitiv" short-name-dan="ent. ubf., ejefald" short-name-gyl="sg. ubf., gen." short-name-eng="sing. indef., gen." short-name-lat="sg. ubf., gen."/>
+        <full-form>idés</full-form>
+        <compact-form>idés</compact-form>
+      </inflected-form>
+      <inflected-form>
+        <inflection-category name-dan="ental bestemt" name-gyl="singularis bestemt" name-eng="singular definite" name-lat="singularis bestemt" short-name-dan="ent. bf." short-name-gyl="sg. bf." short-name-eng="sing. def." short-name-lat="sg. bf."/>
+        <full-form>idéen</full-form>
+        <compact-form>idéen</compact-form>
+      </inflected-form>
+      <inflected-form>
+        <inflection-category name-dan="ental bestemt, ejefald" name-gyl="singularis bestemt, genitiv" name-eng="singular definite, genitive" name-lat="singularis bestemt, genitiv" short-name-dan="ent. bf., ejefald" short-name-gyl="sg. bf., gen." short-name-eng="sing. def., gen." short-name-lat="sg. bf., gen."/>
+        <full-form>idéens</full-form>
+        <compact-form>idéens</compact-form>
+      </inflected-form>
+      <inflected-form>
+        <inflection-category name-dan="flertal ubestemt" name-gyl="pluralis ubestemt" name-eng="plural indefinite" name-lat="pluralis ubestemt" short-name-dan="flt. ubf." short-name-gyl="pl. ubf." short-name-eng="plur. indef." short-name-lat="pl. ubf."/>
+        <full-form>idéer</full-form>
+        <compact-form>idéer</compact-form>
+      </inflected-form>
+      <inflected-form>
+        <inflection-category name-dan="flertal ubestemt, ejefald" name-gyl="pluralis ubestemt, genitiv" name-eng="plural indefinite, genitive" name-lat="pluralis ubestemt, genitiv" short-name-dan="flt. ubf., ejefald" short-name-gyl="pl. ubf., gen." short-name-eng="plur. indef., gen." short-name-lat="pl. ubf., gen."/>
+        <full-form>idéers</full-form>
+        <compact-form>idéers</compact-form>
+      </inflected-form>
+      <inflected-form>
+        <inflection-category name-dan="flertal bestemt" name-gyl="pluralis bestemt" name-eng="plural definite" name-lat="pluralis bestemt" short-name-dan="flt. bf." short-name-gyl="pl. bf." short-name-eng="plur. def." short-name-lat="pl. bf."/>
+        <full-form>idéerne</full-form>
+        <compact-form>idéerne</compact-form>
+      </inflected-form>
+      <inflected-form>
+        <inflection-category name-dan="flertal bestemt, ejefald" name-gyl="pluralis bestemt, genitiv" name-eng="plural definite, genitive" name-lat="pluralis bestemt, genitiv" short-name-dan="flt. bf., ejefald" short-name-gyl="pl. bf., gen." short-name-eng="plur. def., gen." short-name-lat="pl. bf., gen."/>
+        <full-form>idéernes</full-form>
+        <compact-form>idéernes</compact-form>
+      </inflected-form>
+    </searchable-paradigm>
+    <compact-presentation>idéen; idéer; idéerne</compact-presentation>
+    <table-presentation>
+      <row>
+        <cell/>
+        <cell cell-type="header">ubestemt form</cell>
+        <cell cell-type="header">bestemt form</cell>
+      </row>
+      <row>
+        <cell cell-type="header">singularis</cell>
+        <cell cell-type="content">idé</cell>
+        <cell cell-type="content">idéen</cell>
+      </row>
+      <row>
+        <cell cell-type="header">pluralis</cell>
+        <cell cell-type="content">idéer</cell>
+        <cell cell-type="content">idéerne</cell>
+      </row>
+    </table-presentation>
+  </inflection>
+  <variants>
+    <lemma-ref lemma-pos="sb." lemma-ref="ide"/>
+  </variants>
+  <me-as-first-component>idé</me-as-first-component>
+  <me-as-last-component>idé</me-as-last-component>
+  <accessory-data accessory-category-dan="ord der begynder med ¤" accessory-category-eng="compounds starting with ¤">
+    <lemma-ref lemma-pos="sb." lemma-ref="idéassociation"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idébog"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idédrama"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idéflugt"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idéforbindelse"/>
+    <lemma-ref lemma-pos="adj." lemma-ref="idéforladt"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idégrundlag"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idéhistorie"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idéhistoriker"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idékreds"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idélære"/>
+    <lemma-ref lemma-pos="adj." lemma-ref="idéløs"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idémand"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idérække"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="idéskaber"/>
+  </accessory-data>
+  <accessory-data accessory-category-dan="ord der ender på ¤" accessory-category-eng="compounds ending with ¤">
+    <lemma-ref lemma-pos="sb." lemma-ref="gaveidé"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="prisidé"/>
+  </accessory-data>
+  <accessory-data accessory-category-dan="synonymer til ¤" accessory-category-eng="synonyms to ¤">
+    <lemma-ref lemma-pos="sb." lemma-ref="grille" lemma-description-ref="fiks idé"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="indfald"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="indskydelse"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="påfund"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="tanke" lemma-description-ref="forestilling"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="påhit"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="anelse"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="begreb" lemma-description-ref="idé, forestilling"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="forestilling"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="formening" lemma-description-ref="mening"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="formodning"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="fornemmelse"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="forudfølelse"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="mistanke"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="anskuelse"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="filosofi"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="grundtanke"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="grundsætning"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="hovedmotiv"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="hovedtanke"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="indstilling"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="koncept"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="kongstanke"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="livssyn"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="maksime" lemma-description-ref="grundsætning"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="mening"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="opfattelse"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="princip"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="regel"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="tanke" lemma-description-ref="forestilling"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="anskuelse"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="filosofi"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="grundtanke"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="grundsætning"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="hovedmotiv"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="hovedtanke"/>
+    <lemma-ref lemma-pos="sb." lemma-ref="ideologi"/>
+  </accessory-data>
+</lemma>

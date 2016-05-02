@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entry>
+  <id>
+    <id-entry>daenrød0004332</id-entry>
+    <book icon="gyldendal-logo.jpg" short-label="RØD" full-label="GYLDENDALS RØDE">daen-rød</book>
+    <id-lemma lemmaid-ref="dale0010415" lemma-description-ref="om bagværk" lemma-ref="bage" lemma-pos="vb."/>
+  </id>
+  <head>
+    <headword>bage</headword>
+    <pos short-name-lat="vb." short-name-eng="v." short-name-gyl="vb." short-name-dan="uo." name-lat="verbum" name-eng="verb" name-gyl="verbum" name-dan="udsagnsord"/>
+  </head>
+  <body>
+    <reference node-ref="100002673_ACC" book-ref="daen-rød" reference-type="se også ">
+      <headword-ref>bagende</headword-ref>
+    </reference>
+    <sense>
+      <subsense>
+        <target-group>
+          <annotated-target>
+            <translation>bake
+              <gram lemma-ref="bake" lemma-pos="vb." lemma-lang="eng">bøjes: bake; baked; baked</gram>
+            </translation>
+            <example>bread</example>
+            <example>cakes</example>
+            <example>we bake every Monday</example>
+          </annotated-target>
+        </target-group>
+      </subsense>
+    </sense>
+    <sense>
+      <subsense>
+        <target-group>
+          <annotated-target>
+            <translation>bake<gram lemma-ref="bake" lemma-pos="vb." lemma-lang="eng">bøjes: bake; baked; baked</gram>
+            </translation>
+            <example>we bake every Monday</example>
+          </annotated-target>
+        </target-group>
+      </subsense>
+    </sense>
+  </body>
+</entry>

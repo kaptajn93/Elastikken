@@ -20,6 +20,12 @@ namespace Elastikken
     {
         public EntryDocument()
         {
+            //Way to get sense from deserialize blob and use entryElement
+
+           // var x = new EntryDocument();
+           // x.GetDeserializedBlobAndDeleteBlob();
+           //var senses =  x.EntryElement.BodySenses;
+
 
         }
 
@@ -30,12 +36,11 @@ namespace Elastikken
         //id
         public string IdBook { get; set; }
         public string IdEntry { get; set; }
-      //  public EntryIdLemma EntryIdLemma { get; set; }
+        public EntryIdLemma EntryIdLemma { get; set; }
         //head
         public string HeadWord { get; set; }
         public string HeadPosShortNameGyl { get; set; }
         //body
-        public IList<EntrySenseElement> Sense { get; set; }
         public string Blob { get; set; }
         //public string BodyHeadWordRef { get; set; }
         // public IList<TargetGroup> Subsense { get; set; }
@@ -43,51 +48,53 @@ namespace Elastikken
        
             //test counts
         public int SenseCount { get; set; }
-        public int SubsenseCount { get; set; }
+        //public int SubsenseCount { get; set; }
         // 
-       
-       // public EntryElement EntryElement { get; set; }
+
+        [Nest.Nested(Ignore = true)]
+        public EntryElement EntryElement { get; set; }
+
         public EntryElement GetDeserializedBlobAndDeleteBlob()
         {
-            var element = JsonConvert.DeserializeObject<EntryElement>(Blob);
-            return element;
+            //var element = JsonConvert.DeserializeObject<EntryElement>(Blob);
+            this.EntryElement = JsonConvert.DeserializeObject<EntryElement>(Blob);
+            return this.EntryElement;
         }
     }
 
-    //public class EntryIdLemma
-    //{
-    //    public string IdLemmaPos { get; set; }
-    //    public string IdLemmaRef { get; set; }
-    //    public string IdLemmaDescriptionRef { get; set; }
-    //    public string LemmaIdRef { get; set; }
-
-    //}
+    public class EntryIdLemma
+    {
+        public string IdLemmaPos { get; set; }
+        public string IdLemmaRef { get; set; }
+        public string IdLemmaDescriptionRef { get; set; }
+        public string LemmaIdRef { get; set; }
+    }
 }
 
-public class Sense
-{
-    public IList<EntrySubsenseElement> Subsenses { get; set; }
-    public string TargetNodeId { get; set; }
-}
+//public class Sense
+//{
+//    public IList<EntrySubsenseElement> Subsenses { get; set; }
+//    public string TargetNodeId { get; set; }
+//}
 
-public class Subsense
-{
-    public IList<EntryTargetGroupElement> TGroups { get; set; }
-    public string TargetNodeId { get; set; }
-}
+//public class Subsense
+//{
+//    public IList<EntryTargetGroupElement> TGroups { get; set; }
+//    public string TargetNodeId { get; set; }
+//}
 
-public class TargetGroup
-{
-    public IList<EntryAnnotatedTargetElement> AnnotatedTargets { get; set; }
-    public string TargetNodeId { get; set; }
-}
+//public class TargetGroup
+//{
+//    public IList<EntryAnnotatedTargetElement> AnnotatedTargets { get; set; }
+//    public string TargetNodeId { get; set; }
+//}
 
-public class AnnotatedTarget
-{
-    public string Translation { get; set; }
-    //public string Bendings { get; set; }
-    public IList<string> Examples { get; set; }
-}
+//public class AnnotatedTarget
+//{
+//    public string Translation { get; set; }
+//    //public string Bendings { get; set; }
+//    public IList<string> Examples { get; set; }
+//}
 
 
 
