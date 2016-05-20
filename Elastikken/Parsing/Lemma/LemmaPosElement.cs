@@ -28,22 +28,22 @@ namespace Elastikken.Parsing.Lemma
 
             });
         }
- 
-    public string PosShortNameEng { get; set; }
 
-    public string PosShortNameGyl { get; set; }
+        public string PosShortNameEng { get; set; }
 
-    public string PosShortNameDan { get; set; }
+        public string PosShortNameGyl { get; set; }
 
-    public string PosNameLat { get; set; }
+        public string PosShortNameDan { get; set; }
 
-    public string PosShortNameLat { get; set; }
+        public string PosNameLat { get; set; }
 
-    public string PosNameEng { get; set; }
+        public string PosShortNameLat { get; set; }
 
-    public string PosNameGyl { get; set; }
+        public string PosNameEng { get; set; }
 
-    public string PosNameDan { get; set; }
-  
-}
+        public string PosNameGyl { get; set; }
+
+        public string PosNameDan { get; set; }
+
+    }
 }

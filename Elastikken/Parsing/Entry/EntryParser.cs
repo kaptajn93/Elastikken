@@ -5,93 +5,54 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 using Newtonsoft.Json;
+using NLog;
 
 namespace Elastikken.Parsing
 {
     public class EntryParser : ParserBase<EntryDocument>
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        
         public override IEnumerable<EntryDocument> ParseXml(IEnumerable<XElement> elements)
         {
-            var entries = from entryXElement in elements
-                          let entry = new EntryElement(entryXElement)
-                          let sense = new EntrySenseElement(entryXElement)
-                          let sub = new EntrySubsenseElement(entryXElement)
+            try
+            {
+                var entries = from entryXElement in elements
+                              let entry = new EntryElement(entryXElement)
 
-                          //let book = _configurationRepository.TryGetBookById(entry.BookId)
-                          //where book != null
-                          where entry != null
+                              where entry != null
 
-                          let filename = entryXElement.Attributes("filename").FirstOrDefault()
+                              let filename = entryXElement.Attributes("filename").FirstOrDefault()
 
-                          //from sense in entry.BodySenses
-                          //from subSense in sense.SubSenses
-                          //from targetGroup in subSense.TargetGroups
-                          //from annotatedTarget in targetGroup.AnnotatedTargets
-
-                          select new EntryDocument(Guid.NewGuid().ToString())
-                          {
-                              //id
-                              IdEntry = entry.Id,
-                              IdBook = entry.BookId,
-                              //idLemma
-                              EntryIdLemma = new EntryIdLemma
+                              select new EntryDocument(Guid.NewGuid().ToString())
                               {
-                                  IdLemmaPos = entry.IdLemmaLemmaPos,
-                                  IdLemmaRef = entry.IdLemmaLemmaRef,
-                                  IdLemmaDescriptionRef = entry.IdLemmaLemmaDescriptionRef,
-                                  LemmaIdRef = entry.IdLemmaLemmaIdRef,
-                              },
-                              //head
-                              HeadWord = entry.HeadWordExact,
-                              HeadPosShortNameGyl = entry.HeadPosShortNameGyl,
-                              //body
-                              SenseCount = entry.BodySenses?.Count ?? 0,
-                              //Sense = entry.BodySenses,
-                              //BodyHeadWordRef = entry.BodyHeadwordRef,
-                              //blob
-                              Blob = JsonConvert.SerializeObject(entry),
+                                  //id
+                                  IdEntry = entry.Id,
+                                  IdBook = entry.BookId,
+                                  //idLemma
+                                  EntryIdLemma = new EntryIdLemma
+                                  {
+                                      IdLemmaPos = entry.IdLemmaLemmaPos,
+                                      IdLemmaRef = entry.IdLemmaLemmaRef,
+                                      IdLemmaDescriptionRef = entry.IdLemmaLemmaDescriptionRef,
+                                      LemmaIdRef = entry.IdLemmaLemmaIdRef,
+                                  },
+                                  //head
+                                  HeadWord = entry.HeadWordExact,
+                                  HeadPosShortNameGyl = entry.HeadPosShortNameGyl,
+                                  //body
+                                  SenseCount = entry.BodySenses?.Count ?? 0,
+                                  Blob = JsonConvert.SerializeObject(entry),
+                              };
 
+                return entries;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
 
-
-                              //Priority = book.Priority,
-                              //IsBeta = book.IsBeta,
-                              //IlexId = entry.Id,
-                              //IdLemmaLemmaId = entry.IdLemmaLemmaIdRef,
-                              //Unbound = entry.Unbound,
-
-                              //PrioritizeWhenLemmaLemmaId = entry.PrioritizeWhenLemmaLemmaIdRef,
-
-                              ////HeadWordInexact = entry.HeadWordStripped,
-                              //HeadWordExact = entry.HeadWordStripped,
-                              //HeadWordLength = entry.HeadWordStripped.Length,
-                              //HeadPosShortNameGyl = entry.HeadPosShortNameGyl,
-
-                              ////BodyTargetNodeId = entry.BodyTargetNodeId,
-
-                              //AnnotatedTargetTranslationExact = annotatedTarget.TranslationExact,
-                              //AnnotatedTargetTranslationGramLemmaId = annotatedTarget.GetTranslationGramLemmaId(),
-
-                              //TargetNodeIds = string.Join(",",
-                              //    entry.BodyTargetNodeId ?? "",
-                              //    entry.ShowForeignTargetNodeId ?? "",
-                              //    sense.TargetNodeId ?? "",
-                              //    subSense.TargetNodeId ?? "")
-                              //    .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                              //    .ToList()
-                              //,
-
-                              //ShowForeignTargetNodeId = entry.ShowForeignTargetNodeId,
-
-
-
-                              //EntryElement = entry
-
-                              //FeedImportFileName = filename != null ? filename.Value : "N/A"
-                          };
-
-            return entries;
+                throw;
+            }
         }
 
         public override IEnumerable<EntryDocument> ParseXml(IEnumerable<string> xmlFilesToImport)

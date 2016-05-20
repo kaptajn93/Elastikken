@@ -15,18 +15,18 @@ namespace Elastikken.Parsing.Lemma
 
         public LemmaInflectionElement(XElement infXElement) : this()
         {
-            infXElement.Element("inflection").WhenNotNull(inf =>
+            infXElement.Element("inflection").WhenNotNull(gen =>
             {
-                LemmaSearchableParadigm = inf.ChildXElementsOfExtensionType("searchable-paradigm",
-                 x => new LemmaSearchableParadigmElement(x));
-                LemmaCompactPresentation = inf.ChildElementValueOrDefault<string>("compact-presentation");
-                LemmaTablePresentation = infXElement.ChildXElementsOfExtensionType("table-presentation",
-                x => new LemmaTablePresElement(x));
+                LemmaSearchableParadigms = gen.ChildXElementsOfExtensionType("searchable-paradigm",
+                    x => new LemmaSearchableParadigmElement(x));
+                LemmaCompactPresentation = gen.ChildElementValueOrDefault<string>("compact-presentation");
+                LemmaTablePresentations = gen.ChildXElementsOfExtensionType("table-presentation",
+                    x => new LemmaTablePresElement(x));
             });
         }
 
-        public IList<LemmaSearchableParadigmElement> LemmaSearchableParadigm { get; set; }
+        public IList<LemmaSearchableParadigmElement> LemmaSearchableParadigms { get; set; }
         public string LemmaCompactPresentation { get; set; }
-        public IList<LemmaTablePresElement> LemmaTablePresentation { get; set; }
+        public IList<LemmaTablePresElement> LemmaTablePresentations { get; set; }
     }
 }

@@ -491,9 +491,10 @@ namespace Elastikken.Tests
         [Fact]
         public void CanAddParseXmlFileAndAddEntryToElastic()
         {
-            
+
             var fileName =
-                "C:/Users/hsm/Documents/Visual Studio 2015/Projects/Elastikken/Elastikken/Parsing/EntryData.xml";
+                //"C:/Users/hsm/Documents/Visual Studio 2015/Projects/Elastikken/Elastikken/Parsing/EntryData.xml";
+                "C:/Users/hsm/Desktop/Lemma fuldt feed/feed-fuldt-sommer14_Dansk/entry-dan-sko.xml";
             // Act
             var documents = _parser.ParseXml(new List<string> {fileName});
             var tryAddEntry = _manager.AddEntryData(documents.ToList(), "da");

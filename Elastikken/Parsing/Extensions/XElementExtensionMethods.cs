@@ -28,7 +28,7 @@ namespace Elastikken.Parsing
             IEnumerable<XElement> childElements = element.Elements(childElementName);
 
             foreach (XElement childElement in childElements)
-            {
+            { 
                 T convertedChildElementType = extensionTypeFromXElement(childElement);
                 result.Add(convertedChildElementType);
             }

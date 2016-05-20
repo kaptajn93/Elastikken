@@ -15,20 +15,14 @@ namespace Elastikken.Parsing.Lemma
 
         public LemmaAccessoryDataElement(XElement accessoryDataXElement) : this()
         {
-            accessoryDataXElement.Element("accessory-data").WhenNotNull(ad =>
-            {
-                AcDataCatDan = ad.AttributeValueOrDefault("accessory-category-dan");
-                AcDataCatEng = ad.AttributeValueOrDefault("accessory-category-eng");
-                ad.Element("lemma-ref").WhenNotNull(alr =>
-                {
-                    AcDataRefLemPos = alr.AttributeValueOrDefault("lemma-pos");
-                    AcDataRefLemRef = alr.AttributeValueOrDefault("lemma-ref");
-                });
-            });
+                AcDataCatDan = accessoryDataXElement.AttributeValueOrDefault("accessory-category-dan");
+                AcDataCatEng = accessoryDataXElement.AttributeValueOrDefault("accessory-category-eng");
+                AccessoryDataRefs = accessoryDataXElement.ChildXElementsOfExtensionType("lemma-ref",
+                    x => new LemmaAccessoryDataRefElement(x));
         }
-        public string AcDataRefLemRef { get; set; }
 
-        public string AcDataRefLemPos { get; set; }
+        public IList<LemmaAccessoryDataRefElement> AccessoryDataRefs { get; set; }
+
 
         public string AcDataCatEng { get; set; }
 

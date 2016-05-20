@@ -35,77 +35,86 @@ namespace Elastikken.Tests
             //Create
             var response1 = _manager.CreateIndex(indexName);
             _manager.Client.Map<LemmaDocument>(ms => ms
-                    .AutoMap()
-                    .Properties(ps => ps
-      //ingen ide   .String(n => n.Name(p => p.LemmaOrtography)
-                        //      .Index(FieldIndexOption.Analyzed)
-                        //      .Analyzer(Constants.AnalyzerNames.Keyword))
-                        .Nested<LemmaPos>(lp => lp
-                            .Name(lpn => lpn.LemmaPos)
-                            .AutoMap())
-                        .Nested<LemmaGender>(ge => ge
-                            .Name(gn => gn.LemmaGender)
-                            .AutoMap())
-                        .Nested<LemmaInflection>(i => i
-                            .Name(h => h.LemmaInflection)
-                            .AutoMap())
-                        .Nested<LemmaVariants>(v=>v
-                            .Name(vn=>vn.LemmaVariants)
-                            .AutoMap())
-                        .Nested<LemmaAccessoryData>(n => n
-                            .Name(c => c.LemmaAccessoryData)
-                            .AutoMap())
-                    )
+                .AutoMap()
+                .Properties(ps => ps
+                    //ingen ide   .String(n => n.Name(p => p.LemmaOrtography)
+                    //      .Index(FieldIndexOption.Analyzed)
+                    //      .Analyzer(Constants.AnalyzerNames.Keyword))
+                    .Nested<LemmaPos>(lp => lp
+                        .Name(lpn => lpn.LemmaPos)
+                        .AutoMap())
+                    .Nested<LemmaGender>(ge => ge
+                        .Name(gn => gn.LemmaGender)
+                        .AutoMap())
+                    .Nested<LemmaInflection>(i => i
+                        .Name(h => h.LemmaInflection)
+                        .AutoMap()
+                        .Properties(proper => proper
+                            .Nested<LemmaSearchableParadigm>(sp => sp
+                                .Name(spn => spn.SearchableParadigms)
+                                .AutoMap()
+                                .Properties(prop => prop
+                                    .Nested<LemmaInflectedForm>(inf => inf
+                                        .Name(spn => spn.LemmaInflectedForms)
+                                        .AutoMap())))))
+                    .Nested<LemmaVariants>(v => v
+                        .Name(vn => vn.LemmaVariants)
+                        .AutoMap())
+                    .Nested<LemmaAccessoryData>(n => n
+                        .Name(c => c.LemmaAccessoryDatas)
+                        .AutoMap())
+                )
                 );
 
             _manager.Client.Map<EntryDocument>(mc => mc
-                   .AutoMap()
-                   .Properties(ed => ed
-                   .Nested<EntryIdLemma>(el => el
-                   .Name(nel => nel.EntryIdLemma)
-                   .AutoMap()))
+                .AutoMap()
+                .Properties(ed => ed
+                    .Nested<EntryIdLemma>(el => el
+                        .Name(nel => nel.EntryIdLemma)
+                        .AutoMap()))
 
             #region ---Nested entryID/Head/Body
-               //.Properties(pe => pe
-               //    .Nested<EntryId>(ne => ne
-               //        .Name(nae => nae.EntryId)
-               //        .AutoMap())
-               //    .Nested<Head>(nh => nh
-               //        .Name(nu => nu.Head)
-               //        .AutoMap())
-               //    .Nested<Body>(nb => nb
-               //        .Name(n => n.Body)
-               //        .AutoMap() 
+
+                //.Properties(pe => pe
+                //    .Nested<EntryId>(ne => ne
+                //        .Name(nae => nae.EntryId)
+                //        .AutoMap())
+                //    .Nested<Head>(nh => nh
+                //        .Name(nu => nu.Head)
+                //        .AutoMap())
+                //    .Nested<Body>(nb => nb
+                //        .Name(n => n.Body)
+                //        .AutoMap() 
             #endregion
 
 
             #region ---Sense---
-               //.Properties(p => p
-               //    .Nested<EntrySenseElement>(se => se
 
-               //.Name(n => n.Sense)
-               //.AutoMap()
-               //.Properties(pr => pr
-               //    .Nested<EntrySubsenseElement>(s => s
-               //        .Name(n => n.Subsense)
-               //        .AutoMap()
-               //        .Properties(pro => pro
-               //            .Nested<EntryTargetGroupElement>(t => t
-               //                .Name(n => n.TargetGroups)
-               //                .AutoMap()
-               //                .Properties(pat => pat
-               //                    .Nested<EntryAnnotatedTargetElement>(at => at
-               //                        .Name(n => n.AnnotatedTargets)
-               //                        .AutoMap())))
-               //        )
-               //    )
-               //) 
+                //.Properties(p => p
+                //    .Nested<EntrySenseElement>(se => se
+                //.Name(n => n.Sense)
+                //.AutoMap()
+                //.Properties(pr => pr
+                //    .Nested<EntrySubsenseElement>(s => s
+                //        .Name(n => n.Subsense)
+                //        .AutoMap()
+                //        .Properties(pro => pro
+                //            .Nested<EntryTargetGroupElement>(t => t
+                //                .Name(n => n.TargetGroups)
+                //                .AutoMap()
+                //                .Properties(pat => pat
+                //                    .Nested<EntryAnnotatedTargetElement>(at => at
+                //                        .Name(n => n.AnnotatedTargets)
+                //                        .AutoMap())))
+                //        )
+                //    )
+                //) 
 
-               //)
-               //)
+                //)
+                //)
             #endregion
 
-               );
+                );
 
 
             Assert.True(response1.Acknowledged, response1.ServerError?.ToString() ?? response1.DebugInformation);
@@ -186,6 +195,7 @@ namespace Elastikken.Tests
             var list = new List<LemmaDocument>();
             return list;
         }
+
         [Fact]
         public void CanAddLemmaList()
         {
@@ -206,8 +216,10 @@ namespace Elastikken.Tests
                     HeadWord = "HEADWORD",
                     SenseCount = 1,
                     Blob = "Blobiblob",
-                  #region ---Sense---
-		  //Sense = new List<EntrySenseElement>
+
+                    #region ---Sense---
+
+                    //Sense = new List<EntrySenseElement>
                     //{
                     //    new EntrySenseElement()
                     //    {
@@ -235,7 +247,7 @@ namespace Elastikken.Tests
                     //        }
                     //    }
                     //} 
-	#endregion
+                    #endregion
 
                 }
             };
@@ -251,5 +263,56 @@ namespace Elastikken.Tests
             Assert.True(tryAddEntry);
 
         }
+        [Theory]
+        [InlineData("kage")]
+        public EntryDocument GetEntryDocument(string text)
+        {
+            var response = _manager.Client.Search<EntryDocument>(s => s
+                .Index("da")
+                .Type("entrydocument")
+                .From(0)
+                .Size(10)
+                .Explain(true)
+                .Fields(f => f.Field("headWord"))
+                .Query(q =>
+                q.Bool(b=> b.Filter(bf =>bf.QueryString(qs => qs.Query(text))))
+                       )   
+            );
+            return response.Documents.FirstOrDefault();
+        }
+
+
+        [Theory]
+        [InlineData("hus")]
+        public IEnumerable<EntryDocument> Post(string searchword)
+        {
+            var _elastic = new ElasticManager();
+            var response = _elastic.Client.Search<EntryDocument>(e => e
+                .Index("da")
+                .Type("entrydocument")
+                .From(0)
+                .Size(10)
+                //.Explain(true)
+                .Fields(f => f.Field("headWord"))
+                .Query(q => q
+                        .Bool(b => b
+                            .Should(
+                                bs => bs.Term(p => p.HeadWord, searchword),
+                                bs => bs.Term(p => p.HeadWord, "penis")
+                            )
+                        )
+                    )
+            );
+            var entries = new List<EntryDocument>();
+            return entries;
+        }
     }
+
+    //.Query(q =>
+    //            q.Bool(t =>
+    //                t.Must(m =>
+    //                    //m.Term("ortography", ortography)
+    //                    m.Term(qd => qd.Orthography, ortography)
+    //                    )
+    //                )
 }

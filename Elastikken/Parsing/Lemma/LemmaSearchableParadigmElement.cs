@@ -11,20 +11,27 @@ namespace Elastikken.Parsing.Lemma
     {
         public LemmaSearchableParadigmElement()
         {
+            LemmaInflectedForms = new List<LemmaInflectedFormElement>();
         }
+
 
         public LemmaSearchableParadigmElement(XElement searchXElement) : this()
         {
-            searchXElement.Element("searchable-paradigm").WhenNotNull(search =>
-            {
-                LemmaInflectedForm = search.ChildXElementsOfExtensionType("inflected-form",
-                 x => new LemmaInflectedFormElement(x));
-            });
+
+            LemmaInflectedForms = searchXElement.ChildXElementsOfExtensionType("inflected-form",x => new LemmaInflectedFormElement(x));
             
+            //searchXElement.Element("inflected-form").WhenNotNull(se =>
+            //{
+            //    LemmaInflectedForm = se.ChildXElementsOfExtensionType("inflected-form",
+            //     x => new LemmaInflectedFormElement(x));
+            //});
+           
+
+
         }
 
-        public IList<LemmaInflectedFormElement> LemmaInflectedForm { get; set; }
+        public IList<LemmaInflectedFormElement> LemmaInflectedForms { get; set; }
 
-      
+
     }
 }

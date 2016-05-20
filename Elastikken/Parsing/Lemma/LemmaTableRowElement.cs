@@ -16,18 +16,9 @@ namespace Elastikken.Parsing.Lemma
 
         public LemmaTableRowElement(XElement tableRowXElement) : this()
         {
-            tableRowXElement.Element("row").WhenNotNull(r =>
-            {
-                TpCellName = r.ChildElementValueOrDefault<string>("cell");
-                tableRowXElement.Element("cell").WhenNotNull(c =>
-                {
-                    TpCellTyper = c.AttributeValueOrDefault("cell-type");
-                });
-            });
-
-
+            LemmaRowCells = tableRowXElement.ChildXElementsOfExtensionType("cell", x => new LemmaRowCellElement(x));
         }
-        public string TpCellTyper { get; set; }
-        public string TpCellName { get; set; }
+
+        public IList<LemmaRowCellElement> LemmaRowCells { get; set; }
     }
 }

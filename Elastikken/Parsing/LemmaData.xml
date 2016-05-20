@@ -1,133 +1,262 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<lemma language="dan" lemid="dale0268738">
-  <ortography>idé</ortography>
-  <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
-  <gender name-dan="fælleskøn" name-gyl="fælleskøn" name-eng="common gender" name-lat="utrum" short-name-dan="fk." short-name-gyl="fk." short-name-eng="common gender" short-name-lat="ut."/>
-  <inflection>
-    <searchable-paradigm>
-      <inflected-form leave-out="true">
-        <inflection-category name-dan="ental ubestemt" name-gyl="singularis ubestemt" name-eng="singular indefinite" name-lat="singularis ubestemt" short-name-dan="ent.ubf." short-name-gyl="sg.ubf." short-name-eng="sing.indef." short-name-lat="sg.ubf."/>
-        <full-form>idé</full-form>
-        <compact-form>idé</compact-form>
-      </inflected-form>
-      <inflected-form>
-        <inflection-category name-dan="ental ubestemt, ejefald" name-gyl="singularis ubestemt, genitiv" name-eng="singular indefinite, genitive" name-lat="singularis ubestemt, genitiv" short-name-dan="ent. ubf., ejefald" short-name-gyl="sg. ubf., gen." short-name-eng="sing. indef., gen." short-name-lat="sg. ubf., gen."/>
-        <full-form>idés</full-form>
-        <compact-form>idés</compact-form>
-      </inflected-form>
-      <inflected-form>
-        <inflection-category name-dan="ental bestemt" name-gyl="singularis bestemt" name-eng="singular definite" name-lat="singularis bestemt" short-name-dan="ent. bf." short-name-gyl="sg. bf." short-name-eng="sing. def." short-name-lat="sg. bf."/>
-        <full-form>idéen</full-form>
-        <compact-form>idéen</compact-form>
-      </inflected-form>
-      <inflected-form>
-        <inflection-category name-dan="ental bestemt, ejefald" name-gyl="singularis bestemt, genitiv" name-eng="singular definite, genitive" name-lat="singularis bestemt, genitiv" short-name-dan="ent. bf., ejefald" short-name-gyl="sg. bf., gen." short-name-eng="sing. def., gen." short-name-lat="sg. bf., gen."/>
-        <full-form>idéens</full-form>
-        <compact-form>idéens</compact-form>
-      </inflected-form>
-      <inflected-form>
-        <inflection-category name-dan="flertal ubestemt" name-gyl="pluralis ubestemt" name-eng="plural indefinite" name-lat="pluralis ubestemt" short-name-dan="flt. ubf." short-name-gyl="pl. ubf." short-name-eng="plur. indef." short-name-lat="pl. ubf."/>
-        <full-form>idéer</full-form>
-        <compact-form>idéer</compact-form>
-      </inflected-form>
-      <inflected-form>
-        <inflection-category name-dan="flertal ubestemt, ejefald" name-gyl="pluralis ubestemt, genitiv" name-eng="plural indefinite, genitive" name-lat="pluralis ubestemt, genitiv" short-name-dan="flt. ubf., ejefald" short-name-gyl="pl. ubf., gen." short-name-eng="plur. indef., gen." short-name-lat="pl. ubf., gen."/>
-        <full-form>idéers</full-form>
-        <compact-form>idéers</compact-form>
-      </inflected-form>
-      <inflected-form>
-        <inflection-category name-dan="flertal bestemt" name-gyl="pluralis bestemt" name-eng="plural definite" name-lat="pluralis bestemt" short-name-dan="flt. bf." short-name-gyl="pl. bf." short-name-eng="plur. def." short-name-lat="pl. bf."/>
-        <full-form>idéerne</full-form>
-        <compact-form>idéerne</compact-form>
-      </inflected-form>
-      <inflected-form>
-        <inflection-category name-dan="flertal bestemt, ejefald" name-gyl="pluralis bestemt, genitiv" name-eng="plural definite, genitive" name-lat="pluralis bestemt, genitiv" short-name-dan="flt. bf., ejefald" short-name-gyl="pl. bf., gen." short-name-eng="plur. def., gen." short-name-lat="pl. bf., gen."/>
-        <full-form>idéernes</full-form>
-        <compact-form>idéernes</compact-form>
-      </inflected-form>
-    </searchable-paradigm>
-    <compact-presentation>idéen; idéer; idéerne</compact-presentation>
-    <table-presentation>
-      <row>
-        <cell/>
-        <cell cell-type="header">ubestemt form</cell>
-        <cell cell-type="header">bestemt form</cell>
-      </row>
-      <row>
-        <cell cell-type="header">singularis</cell>
-        <cell cell-type="content">idé</cell>
-        <cell cell-type="content">idéen</cell>
-      </row>
-      <row>
-        <cell cell-type="header">pluralis</cell>
-        <cell cell-type="content">idéer</cell>
-        <cell cell-type="content">idéerne</cell>
-      </row>
-    </table-presentation>
-  </inflection>
-  <variants>
-    <lemma-ref lemma-pos="sb." lemma-ref="ide"/>
-  </variants>
-  <me-as-first-component>idé</me-as-first-component>
-  <me-as-last-component>idé</me-as-last-component>
-  <accessory-data accessory-category-dan="ord der begynder med ¤" accessory-category-eng="compounds starting with ¤">
-    <lemma-ref lemma-pos="sb." lemma-ref="idéassociation"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idébog"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idédrama"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idéflugt"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idéforbindelse"/>
-    <lemma-ref lemma-pos="adj." lemma-ref="idéforladt"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idégrundlag"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idéhistorie"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idéhistoriker"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idékreds"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idélære"/>
-    <lemma-ref lemma-pos="adj." lemma-ref="idéløs"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idémand"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idérække"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="idéskaber"/>
-  </accessory-data>
-  <accessory-data accessory-category-dan="ord der ender på ¤" accessory-category-eng="compounds ending with ¤">
-    <lemma-ref lemma-pos="sb." lemma-ref="gaveidé"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="prisidé"/>
-  </accessory-data>
-  <accessory-data accessory-category-dan="synonymer til ¤" accessory-category-eng="synonyms to ¤">
-    <lemma-ref lemma-pos="sb." lemma-ref="grille" lemma-description-ref="fiks idé"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="indfald"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="indskydelse"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="påfund"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="tanke" lemma-description-ref="forestilling"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="påhit"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="anelse"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="begreb" lemma-description-ref="idé, forestilling"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="forestilling"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="formening" lemma-description-ref="mening"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="formodning"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="fornemmelse"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="forudfølelse"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="mistanke"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="anskuelse"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="filosofi"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="grundtanke"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="grundsætning"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="hovedmotiv"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="hovedtanke"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="indstilling"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="koncept"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="kongstanke"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="livssyn"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="maksime" lemma-description-ref="grundsætning"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="mening"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="opfattelse"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="princip"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="regel"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="tanke" lemma-description-ref="forestilling"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="anskuelse"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="filosofi"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="grundtanke"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="grundsætning"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="hovedmotiv"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="hovedtanke"/>
-    <lemma-ref lemma-pos="sb." lemma-ref="ideologi"/>
-  </accessory-data>
-</lemma>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DOC>
+  <lemma language="dan" lemid="dale0205714">
+    <ortography>årstidsbestemte</ortography>
+    <pos name-dan="tillægsord" name-gyl="adjektiv" name-eng="adjective" name-lat="adjektiv" short-name-dan="till." short-name-gyl="adj." short-name-eng="adj." short-name-lat="adj."/>
+    <inflection>
+      <searchable-paradigm/>
+      <compact-presentation/>
+      <table-presentation>
+        <row>
+          <cell cell-type="message">desværre, der er ingen bøjningsoplysninger</cell>
+        </row>
+      </table-presentation>
+    </inflection>
+    <me-as-last-component>årstidsbestemte</me-as-last-component>
+  </lemma>
+  <lemma language="dan" lemid="dale0205715">
+    <ortography>årstilvækst</ortography>
+    <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
+    <inflection>
+      <searchable-paradigm/>
+      <compact-presentation/>
+      <table-presentation>
+        <row>
+          <cell cell-type="message">desværre, der er ingen bøjningsoplysninger</cell>
+        </row>
+      </table-presentation>
+    </inflection>
+    <me-as-first-component>årstilvækst</me-as-first-component>
+    <me-as-last-component>årstilvækst</me-as-last-component>
+  </lemma>
+  <lemma language="dan" lemid="dale0205716">
+    <ortography>årsudbytte</ortography>
+    <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
+    <inflection>
+      <searchable-paradigm/>
+      <compact-presentation/>
+      <table-presentation>
+        <row>
+          <cell cell-type="message">desværre, der er ingen bøjningsoplysninger</cell>
+        </row>
+      </table-presentation>
+    </inflection>
+    <me-as-first-component>årsudbytte</me-as-first-component>
+    <me-as-last-component>årsudbytte</me-as-last-component>
+  </lemma>
+  <lemma language="dan" lemid="dale0295239">
+    <ortography>årsudsigt</ortography>
+    <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
+    <inflection>
+      <searchable-paradigm/>
+      <compact-presentation/>
+      <table-presentation>
+        <row>
+          <cell cell-type="message">desværre, der er ingen bøjningsoplysninger</cell>
+        </row>
+      </table-presentation>
+    </inflection>
+    <me-as-first-component>årsudsigt</me-as-first-component>
+    <me-as-last-component>årsudsigt</me-as-last-component>
+  </lemma>
+  <lemma language="dan" lemid="dale0205717">
+    <ortography>årsunge</ortography>
+    <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
+    <gender name-dan="fælleskøn" name-gyl="fælleskøn" name-eng="common gender" name-lat="utrum" short-name-dan="fk." short-name-gyl="fk." short-name-eng="common gender" short-name-lat="ut."/>
+    <inflection>
+      <searchable-paradigm>
+        <inflected-form leave-out="true">
+          <inflection-category name-dan="ental ubestemt" name-gyl="singularis ubestemt" name-eng="singular indefinite" name-lat="singularis ubestemt" short-name-dan="ent.ubf." short-name-gyl="sg.ubf." short-name-eng="sing.indef." short-name-lat="sg.ubf."/>
+          <full-form>årsunge</full-form>
+          <compact-form>årsunge</compact-form>
+        </inflected-form>
+        <inflected-form>
+          <inflection-category name-dan="ental ubestemt, ejefald" name-gyl="singularis ubestemt, genitiv" name-eng="singular indefinite, genitive" name-lat="singularis ubestemt, genitiv" short-name-dan="ent. ubf., ejefald" short-name-gyl="sg. ubf., gen." short-name-eng="sing. indef., gen." short-name-lat="sg. ubf., gen."/>
+          <full-form>årsunges</full-form>
+          <compact-form>årsunges</compact-form>
+        </inflected-form>
+        <inflected-form>
+          <inflection-category name-dan="ental bestemt" name-gyl="singularis bestemt" name-eng="singular definite" name-lat="singularis bestemt" short-name-dan="ent. bf." short-name-gyl="sg. bf." short-name-eng="sing. def." short-name-lat="sg. bf."/>
+          <full-form>årsungen</full-form>
+          <compact-form>årsungen</compact-form>
+        </inflected-form>
+        <inflected-form>
+          <inflection-category name-dan="ental bestemt, ejefald" name-gyl="singularis bestemt, genitiv" name-eng="singular definite, genitive" name-lat="singularis bestemt, genitiv" short-name-dan="ent. bf., ejefald" short-name-gyl="sg. bf., gen." short-name-eng="sing. def., gen." short-name-lat="sg. bf., gen."/>
+          <full-form>årsungens</full-form>
+          <compact-form>årsungens</compact-form>
+        </inflected-form>
+        <inflected-form>
+          <inflection-category name-dan="flertal ubestemt" name-gyl="pluralis ubestemt" name-eng="plural indefinite" name-lat="pluralis ubestemt" short-name-dan="flt. ubf." short-name-gyl="pl. ubf." short-name-eng="plur. indef." short-name-lat="pl. ubf."/>
+          <full-form>årsunger</full-form>
+          <compact-form>årsunger</compact-form>
+        </inflected-form>
+        <inflected-form>
+          <inflection-category name-dan="flertal ubestemt, ejefald" name-gyl="pluralis ubestemt, genitiv" name-eng="plural indefinite, genitive" name-lat="pluralis ubestemt, genitiv" short-name-dan="flt. ubf., ejefald" short-name-gyl="pl. ubf., gen." short-name-eng="plur. indef., gen." short-name-lat="pl. ubf., gen."/>
+          <full-form>årsungers</full-form>
+          <compact-form>årsungers</compact-form>
+        </inflected-form>
+        <inflected-form>
+          <inflection-category name-dan="flertal bestemt" name-gyl="pluralis bestemt" name-eng="plural definite" name-lat="pluralis bestemt" short-name-dan="flt. bf." short-name-gyl="pl. bf." short-name-eng="plur. def." short-name-lat="pl. bf."/>
+          <full-form>årsungerne</full-form>
+          <compact-form>årsungerne</compact-form>
+        </inflected-form>
+        <inflected-form>
+          <inflection-category name-dan="flertal bestemt, ejefald" name-gyl="pluralis bestemt, genitiv" name-eng="plural definite, genitive" name-lat="pluralis bestemt, genitiv" short-name-dan="flt. bf., ejefald" short-name-gyl="pl. bf., gen." short-name-eng="plur. def., gen." short-name-lat="pl. bf., gen."/>
+          <full-form>årsungernes</full-form>
+          <compact-form>årsungernes</compact-form>
+        </inflected-form>
+      </searchable-paradigm>
+      <compact-presentation>årsungen; årsunger; årsungerne</compact-presentation>
+      <table-presentation>
+        <row>
+          <cell/>
+          <cell cell-type="header">ubestemt form</cell>
+          <cell cell-type="header">bestemt form</cell>
+        </row>
+        <row>
+          <cell cell-type="header">singularis</cell>
+          <cell cell-type="content">årsunge</cell>
+          <cell cell-type="content">årsungen</cell>
+        </row>
+        <row>
+          <cell cell-type="header">pluralis</cell>
+          <cell cell-type="content">årsunger</cell>
+          <cell cell-type="content">årsungerne</cell>
+        </row>
+      </table-presentation>
+    </inflection>
+    <pronunciation-all>
+      <pronunciation>
+        <sound-file sound-file-ref="da_aarsunge.mp3"/>
+      </pronunciation>
+    </pronunciation-all>
+    <me-as-first-component>årsunge</me-as-first-component>
+    <me-as-last-component>årsunge</me-as-last-component>
+  </lemma>
+  <lemma language="dan" lemid="dale0205718">
+    <ortography>årsvariation</ortography>
+    <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
+    <inflection>
+      <searchable-paradigm/>
+      <compact-presentation/>
+      <table-presentation>
+        <row>
+          <cell cell-type="message">desværre, der er ingen bøjningsoplysninger</cell>
+        </row>
+      </table-presentation>
+    </inflection>
+    <me-as-first-component>årsvariation</me-as-first-component>
+    <me-as-last-component>årsvariation</me-as-last-component>
+  </lemma>
+  <lemma language="dan" lemid="dale0282572">
+    <ortography>årsvederlag</ortography>
+    <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
+    <inflection>
+      <searchable-paradigm/>
+      <compact-presentation/>
+      <table-presentation>
+        <row>
+          <cell cell-type="message">desværre, der er ingen bøjningsoplysninger</cell>
+        </row>
+      </table-presentation>
+    </inflection>
+    <me-as-first-component>årsvederlag</me-as-first-component>
+    <me-as-last-component>årsvederlag</me-as-last-component>
+  </lemma>
+  <lemma language="dan" lemid="dale0205719">
+    <ortography>årsvikar</ortography>
+    <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
+    <inflection>
+      <searchable-paradigm/>
+      <compact-presentation/>
+      <table-presentation>
+        <row>
+          <cell cell-type="message">desværre, der er ingen bøjningsoplysninger</cell>
+        </row>
+      </table-presentation>
+    </inflection>
+    <pronunciation-all>
+      <pronunciation>
+        <sound-file sound-file-ref="da_aarsvikar.mp3"/>
+      </pronunciation>
+    </pronunciation-all>
+    <me-as-first-component>årsvikar</me-as-first-component>
+    <me-as-last-component>årsvikar</me-as-last-component>
+  </lemma>
+  <lemma language="dan" lemid="dale0205720">
+    <ortography>årsvirkningsgrad</ortography>
+    <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
+    <inflection>
+      <searchable-paradigm/>
+      <compact-presentation/>
+      <table-presentation>
+        <row>
+          <cell cell-type="message">desværre, der er ingen bøjningsoplysninger</cell>
+        </row>
+      </table-presentation>
+    </inflection>
+    <me-as-first-component>årsvirkningsgrad</me-as-first-component>
+    <me-as-last-component>årsvirkningsgrad</me-as-last-component>
+  </lemma>
+  <lemma language="dan" lemid="dale0205721">
+    <ortography>årsvis</ortography>
+    <pos name-dan="tillægsord" name-gyl="adjektiv" name-eng="adjective" name-lat="adjektiv" short-name-dan="till." short-name-gyl="adj." short-name-eng="adj." short-name-lat="adj."/>
+    <lemma-description>som sker hvert år</lemma-description>
+    <inflection>
+      <searchable-paradigm>
+        <inflected-form>
+          <inflection-category name-dan="ental ubestemt, fælleskøn" name-gyl="singularis ubestemt, fælleskøn" name-eng="singular indefinite, common gender" name-lat="singularis ubestemt, utrium" short-name-dan="ent.ubf.fk." short-name-gyl="sg.ubf.fk." short-name-eng="sing.indef.com." short-name-lat="sg.ubf.utr."/>
+          <full-form>årsvis</full-form>
+          <compact-form>årsvis</compact-form>
+        </inflected-form>
+        <inflected-form>
+          <inflection-category name-dan="ental ubestemt, intetkøn" name-gyl="singularis ubestemt, intetkøn" name-eng="singular indefinite, neuter" name-lat="singularis ubestemt, neutrum" short-name-dan="ent.ubf.itk." short-name-gyl="sg.ubf.itk." short-name-eng="sing.indef.neut." short-name-lat="sg.ubf.n."/>
+          <full-form>årsvis</full-form>
+          <compact-form>årsvis</compact-form>
+        </inflected-form>
+        <inflected-form>
+          <inflection-category name-dan="ental ubestemt, intetkøn" name-gyl="singularis ubestemt, intetkøn" name-eng="singular indefinite, neuter" name-lat="singularis ubestemt, neutrum" short-name-dan="ent.ubf.itk." short-name-gyl="sg.ubf.itk." short-name-eng="sing.indef.neut." short-name-lat="sg.ubf.n."/>
+          <full-form>årsvist</full-form>
+          <compact-form>årsvist</compact-form>
+        </inflected-form>
+        <inflected-form>
+          <inflection-category name-dan="ental bestemt" name-gyl="singularis bestemt" name-eng="singular definite" name-lat="singularis bestemt" short-name-dan="ent.bf." short-name-gyl="sg.bf." short-name-eng="sing.def." short-name-lat="sg.bf."/>
+          <full-form>årsvise</full-form>
+          <compact-form>årsvise</compact-form>
+        </inflected-form>
+        <inflected-form>
+          <inflection-category name-dan="flertal" name-gyl="pluralis" name-eng="plural" name-lat="pluralis" short-name-dan="flt." short-name-gyl="pl." short-name-eng="plur." short-name-lat="pl."/>
+          <full-form>årsvise</full-form>
+          <compact-form>årsvise</compact-form>
+        </inflected-form>
+      </searchable-paradigm>
+      <compact-presentation>pos.: årsvis, (itk.) årsvis, årsvist, (bf. + pl.) årsvise</compact-presentation>
+      <table-presentation>
+        <row>
+          <cellspan cell-type="header" cellcount="3">positiv</cellspan>
+        </row>
+        <row>
+          <cell/>
+          <cell cell-type="header">ubestemt form</cell>
+          <cell cell-type="header">bestemt form</cell>
+        </row>
+        <row>
+          <cell cell-type="header">singularis fælleskøn</cell>
+          <cell cell-type="content">årsvis</cell>
+          <cell cell-type="content">årsvise</cell>
+        </row>
+        <row>
+          <cell cell-type="header">singularis intetkøn</cell>
+          <cell cell-type="content">årsvis / årsvist</cell>
+          <cell cell-type="content">årsvise</cell>
+        </row>
+        <row>
+          <cell cell-type="header">pluralis</cell>
+          <cell cell-type="content">årsvise</cell>
+          <cell cell-type="content">årsvise</cell>
+        </row>
+      </table-presentation>
+    </inflection>
+    <me-as-last-component>årsvis</me-as-last-component>
+  </lemma>
+</DOC>

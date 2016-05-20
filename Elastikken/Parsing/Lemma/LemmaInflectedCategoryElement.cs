@@ -15,19 +15,15 @@ namespace Elastikken.Parsing.Lemma
 
         public LemmaInflectedCategoryElement(XElement infCatXElement) : this()
         {
-            infCatXElement.Element("inflection-category").WhenNotNull(icat =>
-            {
-                InfCatNameDan = icat.AttributeValueOrDefault("name-dan");
-                InfCatNameGyl = icat.AttributeValueOrDefault("name-gyl");
-                InfCatNameEng = icat.AttributeValueOrDefault("name-eng");
-                InfCatNameLat = icat.AttributeValueOrDefault("name-lat");
-                InfCatShortNameDan = icat.AttributeValueOrDefault("short-name-dan");
-                InfCatShortNameGyl = icat.AttributeValueOrDefault("short-name-gyl");
-                InfCatShortNameEng = icat.AttributeValueOrDefault("short-name-eng");
-                InfCatShortNameLat = icat.AttributeValueOrDefault("short-name-lat");
-            });
-
-
+           
+                InfCatNameDan = infCatXElement.AttributeValueOrDefault("name-dan");
+                InfCatNameGyl = infCatXElement.AttributeValueOrDefault("name-gyl");
+                InfCatNameEng = infCatXElement.AttributeValueOrDefault("name-eng");
+                InfCatNameLat = infCatXElement.AttributeValueOrDefault("name-lat");
+                InfCatShortNameDan = infCatXElement.AttributeValueOrDefault("short-name-dan");
+                InfCatShortNameGyl = infCatXElement.AttributeValueOrDefault("short-name-gyl");
+                InfCatShortNameEng = infCatXElement.AttributeValueOrDefault("short-name-eng");
+                InfCatShortNameLat = infCatXElement.AttributeValueOrDefault("short-name-lat");
         }
         #region ---Infected-form inf-Category---
 

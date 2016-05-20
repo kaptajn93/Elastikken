@@ -1,42 +1,401 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<entry>
-  <id>
-    <id-entry>daenrød0004332</id-entry>
-    <book icon="gyldendal-logo.jpg" short-label="RØD" full-label="GYLDENDALS RØDE">daen-rød</book>
-    <id-lemma lemmaid-ref="dale0010415" lemma-description-ref="om bagværk" lemma-ref="bage" lemma-pos="vb."/>
-  </id>
-  <head>
-    <headword>bage</headword>
-    <pos short-name-lat="vb." short-name-eng="v." short-name-gyl="vb." short-name-dan="uo." name-lat="verbum" name-eng="verb" name-gyl="verbum" name-dan="udsagnsord"/>
-  </head>
-  <body>
-    <reference node-ref="100002673_ACC" book-ref="daen-rød" reference-type="se også ">
-      <headword-ref>bagende</headword-ref>
-    </reference>
-    <sense>
-      <subsense>
-        <target-group>
-          <annotated-target>
-            <translation>bake
-              <gram lemma-ref="bake" lemma-pos="vb." lemma-lang="eng">bøjes: bake; baked; baked</gram>
-            </translation>
-            <example>bread</example>
-            <example>cakes</example>
-            <example>we bake every Monday</example>
-          </annotated-target>
-        </target-group>
-      </subsense>
-    </sense>
-    <sense>
-      <subsense>
-        <target-group>
-          <annotated-target>
-            <translation>bake<gram lemma-ref="bake" lemma-pos="vb." lemma-lang="eng">bøjes: bake; baked; baked</gram>
-            </translation>
-            <example>we bake every Monday</example>
-          </annotated-target>
-        </target-group>
-      </subsense>
-    </sense>
-  </body>
-</entry>
+<DOC>
+  <entry>
+    <id>
+      <id-entry>daenrød0004332</id-entry>
+      <book full-label="GYLDENDALS RØDE" short-label="RØD" icon="gyldendal-logo.jpg">daen-rød</book>
+      <id-lemma lemma-pos="vb." lemma-ref="bage" lemma-description-ref="om bagværk" lemmaid-ref="dale0331291"/>
+    </id>
+    <head>
+      <headword>bage</headword>
+      <pos name-dan="udsagnsord" name-gyl="verbum" name-eng="verb" name-lat="verbum" short-name-dan="uo." short-name-gyl="vb." short-name-eng="v." short-name-lat="vb."/>
+    </head>
+    <body>
+      <reference reference-type="se også " book-ref="daen-rød" node-ref="100002673_ACC">
+        <headword-ref>bagende</headword-ref>
+      </reference>
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>
+                bake <gram lemma-pos="vb." lemma-ref="bake" lemma-lang="eng">bøjes: bake; baked; baked</gram>
+              </translation>
+              <example>bread</example>
+              <example>cakes</example>
+              <example>we bake every Monday</example>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>
+                bake <gram lemma-pos="vb." lemma-ref="bake" lemma-lang="eng">bøjes: bake; baked; baked</gram>
+              </translation>
+              <example>we bake every Monday</example>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+
+    </body>
+  </entry>
+  <entry>
+    <id>
+      <book full-label="GYLDENDALS RØDE" short-label="RØD" icon="gyldendal-logo.jpg">daen-rød</book>
+      <unbound/>
+      <prioritize-when-lemma lemma-pos="vb." lemma-ref="bage" lemma-description-ref="om bagværk"/>
+    </id>
+    <head>
+      <headword>bage brød af mel</headword>
+    </head>
+    <body>
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>bake bread from flour</translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+  <entry>
+    <id>
+      <book full-label="GYLDENDALS RØDE" short-label="RØD" icon="gyldendal-logo.jpg">daen-rød</book>
+      <unbound/>
+      <prioritize-when-lemma lemma-pos="vb." lemma-ref="bage" lemma-description-ref="om bagværk"/>
+    </id>
+    <head>
+      <headword>bage sovsen op</headword>
+    </head>
+    <body>
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>thicken the sauce</translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+  <entry>
+    <id>
+      <book full-label="GYLDENDALS RØDE" short-label="RØD" icon="gyldendal-logo.jpg">daen-rød</book>
+      <unbound/>
+      <prioritize-when-lemma lemma-pos="vb." lemma-ref="bage" lemma-description-ref="om bagværk"/>
+    </id>
+    <head>
+      <headword>bage på</headword>
+    </head>
+    <body>
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>try to get off with</translation>
+            </annotated-target>
+            <annotated-target>
+              <translation>make a pass at</translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+  <entry>
+    <id>
+      <book full-label="GYLDENDALS RØDE" short-label="RØD" icon="gyldendal-logo.jpg">daen-rød</book>
+      <unbound/>
+      <prioritize-when-lemma lemma-pos="vb." lemma-ref="bage" lemma-description-ref="om bagværk"/>
+    </id>
+    <head>
+      <headword>vi bager selv</headword>
+    </head>
+    <body>
+      <sense>
+        <description>om brød</description>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>we bake our own bread</translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+      <sense>
+        <description>om kager</description>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>we bake our own cakes</translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+  <entry>
+    <id>
+      <book full-label="GYLDENDALS RØDE" short-label="RØD" icon="gyldendal-logo.jpg">daen-rød</book>
+      <id-lemma lemma-pos="vb." lemma-ref="bage" lemma-description-ref="om solen"/>
+    </id>
+    <head>
+      <headword>bage</headword>
+      <pos name-dan="udsagnsord" name-gyl="verbum" name-eng="verb" name-lat="verbum" short-name-dan="uo." short-name-gyl="vb." short-name-eng="v." short-name-lat="vb."/>
+    </head>
+    <body>
+      <sense>
+        <description>om solen</description>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>beat/ blaze down</translation>
+              <example>the sun was beating down on our heads as we walked</example>
+            </annotated-target>
+            <annotated-target>
+              <translation>pour down</translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+  <entry>
+    <id>
+      <book full-label="GYLDENDALS RØDE" short-label="RØD" icon="gyldendal-logo.jpg">daen-rød</book>
+      <id-lemma lemma-pos="adj." lemma-ref="megen"/>
+    </id>
+    <head>
+      <headword>mere</headword>
+      <inflected-form>komparativ af </inflected-form>
+      <pos name-dan="tillægsord" name-gyl="adjektiv" name-eng="adjective" name-lat="adjektiv" short-name-dan="till." short-name-gyl="adj." short-name-eng="adj." short-name-lat="adj."/>
+    </head>
+    <body>
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>
+                <adj-med-morfologi engelsk-binde-status="ok" engelsk-lemma-beskriver-ref="komparativ af 'much'" engelsk-lemma-ref="more" engelsk-paradigme-fuldform="much; more; most" engelsk-paradigme-komprimeret="much; ∼; most">more</adj-med-morfologi>
+              </translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+  <entry>
+    <id>
+      <book full-label="GYLDENDALS RØDE" short-label="RØD" icon="gyldendal-logo.jpg">daen-rød</book>
+      <id-lemma lemma-pos="vb." lemma-ref="bokse"/>
+    </id>
+    <head>
+      <headword>bokse</headword>
+      <pos name-dan="udsagnsord" name-gyl="verbum" name-eng="verb" name-lat="verbum" short-name-dan="uo." short-name-gyl="vb." short-name-eng="v." short-name-lat="vb."/>
+    </head>
+    <body>
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>
+                boxa <info>udtales: ˈbuksa</info>
+              </translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+  <entry>
+    <id>
+      <book full-label="DANSK FREMMEDORDBOG" short-label="FREO" icon="gyldendal-logo.jpg">daen-rød</book>
+      <unbound/>
+    </id>
+    <head>
+      <headword>
+        cm<superscript>2</superscript>
+      </headword>
+      <abbreviation-for>kvadratcentimeter</abbreviation-for>
+    </head>
+    <body target-node-id="100007335_AAC">
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <target-language-definition>enhed for areal</target-language-definition>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+  <entry>
+    <id>
+      <book full-label="GYLDENDALS RØDE" short-label="RØD" icon="gyldendal-logo.jpg">daen-rød</book>
+      <id-lemma lemma-pos="vb." lemma-ref="bokse"/>
+    </id>
+    <head>
+      <headword>blah</headword>
+      <pos name-dan="udsagnsord" name-gyl="verbum" name-eng="verb" name-lat="verbum" short-name-dan="uo." short-name-gyl="vb." short-name-eng="v." short-name-lat="vb."/>
+    </head>
+    <body>
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>
+                <mark tegn-efter-gyl="x">blah</mark> fisk
+              </translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+  <entry>
+    <id>
+      <book full-label="DANSK FREMMEDORDBOG" short-label="FREO" icon="gyldendal-logo.jpg">daen-rød</book>
+      <id-lemma lemma-pos="sb." lemma-ref="cantus planus"/>
+    </id>
+    <head>
+      <headword>cantus planus</headword>
+      <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
+    </head>
+    <body target-node-id="100047737_AAC">
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <target-language-definition>sang hvis noder er lige lange</target-language-definition>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+      <relations name-dan="antonymer" name-gyl="antonymer" name-eng="antonyms" name-lat="antonymer" short-name-dan="ant." short-name-gyl="ant." short-name-eng="ant." short-name-lat="ant.">
+        <annotated-relation>
+          <reference book-ref="dan-freo" node-ref="100047733_AAC">
+            <headword-ref>cantus figuralis</headword-ref>
+          </reference>
+        </annotated-relation>
+        <annotated-relation>
+          <reference book-ref="dan-freo" node-ref="100047734_AAC">
+            <headword-ref>cantus mensuratus</headword-ref>
+          </reference>
+        </annotated-relation>
+      </relations>
+      <box name-dan="oprindelse" name-gyl="etymologi" name-eng="etymology" name-lat="etymologi" short-name-dan="opr." short-name-gyl="etym." short-name-eng="etym." short-name-lat="etym.">
+        <text>lat.</text>
+      </box>
+    </body>
+  </entry>
+  <!-- New entry added for https://jira.miracleas.dk/browse/GOS-32 (ill-type) -->
+  <entry>
+    <id>
+      <book full-label="FAGORDBOG" icon="gyldendal-logo.jpg" ill-type="1" short-label="FAG">daen-fag</book>
+      <id-lemma lemma-pos="sb." lemma-ref="kuglegrill" lemmaid-ref="dale0232836"/>
+      <id-entry>daenfag0096121</id-entry>
+    </id>
+    <head>
+      <headword>kuglegrill</headword>
+      <pos name-dan="navneord" name-eng="noun" name-gyl="substantiv" name-lat="substantiv" short-name-dan="no." short-name-eng="n." short-name-gyl="sb." short-name-lat="sb."/>
+    </head>
+    <body>
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <translation>ball grill</translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+  <entry>
+    <id>
+      <book full-label="RETSKRIVNINGSORDBOG" short-label="RET" icon="gyldendal-logo.jpg" ill-type="">dan-ret</book>
+      <id-lemma lemma-pos="adv." lemma-ref="bevislig" lemma-description-ref="påviseligt" lemmaid-ref="dale0331291"/>
+      <id-entry>danret0006732</id-entry>
+    </id>
+    <head>
+      <headword>bevislig</headword>
+      <about-headword>be•vis•lig</about-headword>
+      <pos name-dan="biord" name-gyl="adverbium" name-eng="adverb" name-lat="adverbium" short-name-dan="biord" short-name-gyl="adv." short-name-eng="adv." short-name-lat="adv."/>
+      <variant-form>
+        <variant>beviselig</variant>
+      </variant-form>
+      <variant-form>
+        <variant>bevisligt</variant>
+      </variant-form>
+      <variant-form>
+        <description>FOOBAR</description>
+        <variant>beviseligt</variant>
+        <reg-tm></reg-tm>
+      </variant-form>
+    </head>
+    <body target-node-id="100006705_ACC">
+      <sense>
+        <subsense>
+          <target-group>
+            <annotated-target>
+              <target-language-definition>påviseligt</target-language-definition>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+
+  <!-- 14 (3 senses) -->
+  <entry>
+    <id>
+      <book full-label="GYLDENDALS RØDE" short-label="RØD" icon="gyldendal-logo.jpg">daen-rød</book>
+      <id-lemma lemma-pos="sb." lemma-ref="faldskærmsudspring" lemmaid-ref="dale0038973"/>
+      <id-entry>daenrød0017618</id-entry>
+    </id>
+    <head>
+      <headword>faldskærmsudspring</headword>
+      <pos name-dan="navneord" name-gyl="substantiv" name-eng="noun" name-lat="substantiv" short-name-dan="no." short-name-gyl="sb." short-name-eng="n." short-name-lat="sb."/>
+    </head>
+    <body target-node-id="FAKE_TARGET_NODE_ID_ON_BODY">
+      <sense target-node-id="FAKE_TARGET_NODE_ID_ON_SENSE_1">
+        <description>det at springe</description>
+        <subsense target-node-id="FAKE_TARGET_NODE_ID_ON_SENSE_1_SUBSENSE_1">
+          <target-group>
+            <annotated-target>
+              <translation>parachute jumping</translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+        <subsense target-node-id="FAKE_TARGET_NODE_ID_ON_SENSE_1_SUBSENSE_2">
+          <description>med frit fald</description>
+          <target-group>
+            <annotated-target>
+              <translation>
+                skydiving <gram lemma-pos="sb." lemma-ref="skydiving" lemmaid-ref="enle0252656" lemma-lang="eng">bøjes: bøjes ikke</gram>
+              </translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+      <sense target-node-id="FAKE_TARGET_NODE_ID_ON_SENSE_2">
+        <description>enkelt spring</description>
+        <subsense target-node-id="FAKE_TARGET_NODE_ID_ON_SENSE_2_SUBSENSE_1">
+          <target-group>
+            <annotated-target>
+              <translation>parachute jump</translation>
+            </annotated-target>
+          </target-group>
+        </subsense>
+      </sense>
+    </body>
+  </entry>
+</DOC>

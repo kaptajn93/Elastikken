@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Newtonsoft.Json.Linq;
 
 namespace Elastikken.Parsing.Lemma
 {
@@ -28,10 +29,15 @@ namespace Elastikken.Parsing.Lemma
 
             MeFirstComp = lemmaElement.ChildElementValueOrDefault<string>("me-as-first-component");
             MeLastComp = lemmaElement.ChildElementValueOrDefault<string>("me-as-last-component");
+            LemmaUsage = lemmaElement.ChildElementValueOrDefault<string>("usage");
 
             ParseAccessoryData(lemmaElement);
-
+            ParsePronunciationAll(lemmaElement);
+            ParseIllustration(lemmaElement);
+            ParseAbbrreviation(lemmaElement);
         }
+
+
         private void ParsePos(XElement lemmaElement)
         {
             LemmaPos = lemmaElement.ChildXElementsOfExtensionType("pos", x => new LemmaPosElement(x));
@@ -60,6 +66,24 @@ namespace Elastikken.Parsing.Lemma
                 x => new LemmaAccessoryDataElement(x));
         }
 
+        private void ParsePronunciationAll(XElement lemmaElement)
+        {
+            LemmaPronunciation = lemmaElement.ChildXElementsOfExtensionType("pronunciation-all",
+                x => new LemmaPronunciationAllElement(x));
+        }
+        private void ParseIllustration(XElement lemmaElement)
+        {
+            LemmaIllustration = lemmaElement.ChildXElementsOfExtensionType("illustration",
+                x => new LemmaIllustrationElement(x));
+        }
+        private void ParseAbbrreviation(XElement lemmaElement)
+        {
+            LemmaAbbreviationFor = lemmaElement.ChildXElementsOfExtensionType("abbreviation-for",
+                x => new LemmaLemmaAbbreviationForElement(x));
+        }
+
+
+
         public string LemmaLanguage { get; set; }
         public string LemmaId { get; set; }
         public string LemmaOrtography { get; set; }
@@ -70,6 +94,13 @@ namespace Elastikken.Parsing.Lemma
         public string MeLastComp { get; set; }
         public string MeFirstComp { get; set; }
         public IList<LemmaAccessoryDataElement> LemmaAccessoryData { get; set; }
+        public string LemmaUsage { get; set; }
+
+        public IList<LemmaLemmaAbbreviationForElement> LemmaAbbreviationFor { get; set; }
+
+        public IList<LemmaIllustrationElement> LemmaIllustration { get; set; }
+
+        public IList<LemmaPronunciationAllElement> LemmaPronunciation { get; set; }
     }
 }
 

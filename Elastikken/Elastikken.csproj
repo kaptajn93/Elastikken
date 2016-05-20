@@ -45,6 +45,10 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.3\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -64,18 +68,30 @@
     <Compile Include="Parsing\Entry\EntryParser.cs" />
     <Compile Include="Parsing\Entry\EntrySenseElement.cs" />
     <Compile Include="Parsing\Entry\EntryTargetGroupElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaAbbBlindRefElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaAbbRefElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaAccessoryDataElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaAccessoryDataRefElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaGenderElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaIllFileElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaIllustrationElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaInflectedCategoryElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaInflectedFormElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaInflectionElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaLangVariantElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaLemmaAbbreviationForElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaParser.cs" />
     <Compile Include="Parsing\Lemma\LemmaPosElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaPronunciationAllElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaPronunciationVariantElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaRowCellElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaSearchableParadigmElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaTablePresElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaTableRowElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaVariantDescriptionElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaVariantsElement.cs" />
+    <Compile Include="Parsing\Lemma\LemmaVarPronunciationElement.cs" />
     <Compile Include="Parsing\ParserBase.cs" />
     <Compile Include="Parsing\ParsingException.cs" />
     <Compile Include="Parsing\Extensions\XElementExtensionMethods.cs" />
@@ -85,6 +101,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -93,7 +115,9 @@
     <Content Include="Parsing\EntryData.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Parsing\LemmaData.xml" />
+    <Content Include="Parsing\LemmaData.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

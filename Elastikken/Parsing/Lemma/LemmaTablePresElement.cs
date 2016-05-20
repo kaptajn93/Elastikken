@@ -16,12 +16,7 @@ namespace Elastikken.Parsing.Lemma
 
         public LemmaTablePresElement(XElement tpXElement) : this()
         {
-            tpXElement.Element("table-presentation").WhenNotNull(tp =>
-            {
-                 LemmaTableRow = tp.ChildXElementsOfExtensionType("row",
-                x => new LemmaTableRowElement(x));
-            });
-           
+            LemmaTableRow = tpXElement.ChildXElementsOfExtensionType("row", x => new LemmaTableRowElement(x));
         }
 
         public IList<LemmaTableRowElement> LemmaTableRow { get; set; }
