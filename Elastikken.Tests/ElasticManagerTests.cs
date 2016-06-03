@@ -69,8 +69,10 @@ namespace Elastikken.Tests
             _manager.Client.Map<EntryDocument>(mc => mc
                 .AutoMap()
                 .Properties(ed => ed
+                    .String(n => n.Name(na => na.HeadWordExact)
+                        .Index(FieldIndexOption.NotAnalyzed))
                     .Nested<EntryIdLemma>(el => el
-                        .Name(nel => nel.EntryIdLemma)
+                        .Name(na => na.EntryIdLemma)
                         .AutoMap()))
 
             #region ---Nested entryID/Head/Body
@@ -115,8 +117,6 @@ namespace Elastikken.Tests
             #endregion
 
                 );
-
-
             Assert.True(response1.Acknowledged, response1.ServerError?.ToString() ?? response1.DebugInformation);
         }
 

@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Xml.Linq;
-using Nest;
 
 namespace Elastikken.Parsing
 {
@@ -47,25 +45,29 @@ namespace Elastikken.Parsing
                     IdLemmaLemmaIdRef = i.AttributeValueOrDefault("lemmaid-ref");
                 });
 
-               // Unbound = (id.Element("unbound") != null);
+                Unbound = (id.Element("unbound") != null);
 
                 // TODO: Handle multiple prioritize-when-lemma's?
                 id.Element("prioritize-when-lemma").WhenNotNull(pri =>
                 {
-                    //PrioritizeWhenLemmaLemmaId
-                    //PrioritizeWhenLemmaLemmaPos = pri.AttributeValueOrDefault("lemma-pos");
-                    //PrioritizeWhenLemmaLemmaRef = pri.AttributeValueOrDefault("lemma-ref");
-                    //PrioritizeWhenLemmaLemmaDescription = pri.AttributeValueOrDefault("lemma-description-ref");
-                    //PrioritizeWhenLemmaLemmaIdRef = pri.AttributeValueOrDefault("lemmaid-ref");
+                    PrioritizeWhenLemmaLemmaPos = pri.AttributeValueOrDefault("lemma-pos");
+                    PrioritizeWhenLemmaLemmaRef = pri.AttributeValueOrDefault("lemma-ref");
+                    PrioritizeWhenLemmaLemmaDescription = pri.AttributeValueOrDefault("lemma-description-ref");
+                    PrioritizeWhenLemmaLemmaIdRef = pri.AttributeValueOrDefault("lemmaid-ref");
                 });
             });
         }
+
+
+
 
         private void ParseHead(XElement entryElement)
         {
             entryElement.Element("head").WhenNotNull(id =>
             {
-                HeadWordExact = id.ChildElementValueOrDefault<string>("headword");
+                HeadWord = id.ChildElementValueOrDefault<string>("headword");
+                
+                
                 id.Element("pos").WhenNotNull(i =>
                 {
                     HeadPosShortNameGyl = i.AttributeValueOrDefault("short-name-gyl");
@@ -77,7 +79,7 @@ namespace Elastikken.Parsing
         {
             entryElement.Element("body").WhenNotNull(b =>
             {
-             //   BodyTargetNode = b.AttributeValueOrDefault("target-nod-id");
+                //   BodyTargetNode = b.AttributeValueOrDefault("target-nod-id");
 
                 b.Element("reference").WhenNotNull(r =>
                 {
@@ -85,7 +87,7 @@ namespace Elastikken.Parsing
                     //BodyBookRef = r.AttributeValueOrDefault("book-ref");
                     //BodyNodeRef = r.AttributeValueOrDefault("node-ref");
                     //BodyHeadwordRef = r.ChildElementValueOrDefault<string>("headword-ref");
-                  
+
                     //BodyHeadwordRef = r
                     //    .Elements("headword-ref")
                     //    .Select(e => e
@@ -94,14 +96,14 @@ namespace Elastikken.Parsing
                     //    .Trim())
                     //    .ToList();
                 });
-                BodySenses = b.ChildXElementsOfExtensionType("sense", x=> new EntrySenseElement(x));
-                
+                BodySenses = b.ChildXElementsOfExtensionType("sense", x => new EntrySenseElement(x));
+
             });
         }
 
         #region --- ID: -- 
-     
-            #region ---ID LEMMA----
+
+        #region ---ID LEMMA----
         public string IdLemmaLemmaIdRef { get; set; }
 
         public string IdLemmaLemmaDescriptionRef { get; set; }
@@ -116,10 +118,16 @@ namespace Elastikken.Parsing
         public string Id { get; set; }
         #endregion
 
+        public bool Unbound { get; set; }
+        public string PrioritizeWhenLemmaLemmaIdRef { get; set; }
+        public string PrioritizeWhenLemmaLemmaDescription { get; set; }
+        public string PrioritizeWhenLemmaLemmaRef { get; set; }
+        public string PrioritizeWhenLemmaLemmaPos { get; set; }
+
         #region ---head---
         public string HeadPosShortNameGyl { get; set; }
 
-        public string HeadWordExact { get; set; }
+        public string HeadWord { get; set; }
         #endregion
 
         #region --- BODY: --- 
@@ -166,7 +174,7 @@ namespace Elastikken.Parsing
 
         #endregion
 
-
+       
     }
 
 }

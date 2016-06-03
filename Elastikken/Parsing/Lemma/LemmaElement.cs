@@ -37,7 +37,6 @@ namespace Elastikken.Parsing.Lemma
             ParseAbbrreviation(lemmaElement);
         }
 
-
         private void ParsePos(XElement lemmaElement)
         {
             LemmaPos = lemmaElement.ChildXElementsOfExtensionType("pos", x => new LemmaPosElement(x));

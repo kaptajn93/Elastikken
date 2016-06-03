@@ -29,6 +29,17 @@ namespace Elastikken.Parsing
                                   //id
                                   IdEntry = entry.Id,
                                   IdBook = entry.BookId,
+                                  
+                                  Unbound = entry.Unbound,
+                                  PrioritizeWhenLemma = new PrioritizeWhenLemma
+                                  {
+                                      PrioritizeLemmaPos = entry.PrioritizeWhenLemmaLemmaPos,
+                                      PrioritizeLemmaRef = entry.PrioritizeWhenLemmaLemmaRef,
+                                      PrioritizeLemmaDescRef = entry.PrioritizeWhenLemmaLemmaDescription,
+                                      PrioritizeLemmaIfRef = entry.PrioritizeWhenLemmaLemmaIdRef
+
+                                  },
+
                                   //idLemma
                                   EntryIdLemma = new EntryIdLemma
                                   {
@@ -38,7 +49,8 @@ namespace Elastikken.Parsing
                                       LemmaIdRef = entry.IdLemmaLemmaIdRef,
                                   },
                                   //head
-                                  HeadWord = entry.HeadWordExact,
+                                  HeadWord = entry.HeadWord,
+
                                   HeadPosShortNameGyl = entry.HeadPosShortNameGyl,
                                   //body
                                   SenseCount = entry.BodySenses?.Count ?? 0,

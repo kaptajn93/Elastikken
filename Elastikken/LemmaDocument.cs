@@ -58,6 +58,7 @@ namespace Elastikken
 
 }
 
+
 public class LemmaPos
 {
     public string PosNameDan { get; set; }
