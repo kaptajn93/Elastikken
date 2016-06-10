@@ -36,7 +36,7 @@ namespace Elastikken.Parsing
                                       PrioritizeLemmaPos = entry.PrioritizeWhenLemmaLemmaPos,
                                       PrioritizeLemmaRef = entry.PrioritizeWhenLemmaLemmaRef,
                                       PrioritizeLemmaDescRef = entry.PrioritizeWhenLemmaLemmaDescription,
-                                      PrioritizeLemmaIfRef = entry.PrioritizeWhenLemmaLemmaIdRef
+                                      PrioritizeLemmaIdRef = entry.PrioritizeWhenLemmaLemmaIdRef
 
                                   },
 
@@ -50,6 +50,7 @@ namespace Elastikken.Parsing
                                   },
                                   //head
                                   HeadWord = entry.HeadWord,
+                                  HeadWordExact = entry.HeadWord,
 
                                   HeadPosShortNameGyl = entry.HeadPosShortNameGyl,
                                   //body

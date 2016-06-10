@@ -31,11 +31,11 @@ namespace Elastikken.Tests
         public void CanAddParseXmlFileAndAddEntryToElastic()
         {
 
-            var lemmaFile = "C:/Users/hsm/Desktop/Lemma fuldt feed/lemma-dan_23-05-14/lemma-dan-3.xml";
+            var lemmaFile = "C:/Users/hsm/Desktop/Lemma fuldt feed/Test/Lemma.xml";
             var myData = "C:/Users/hsm/Documents/Visual Studio 2015/Projects/Elastikken/Elastikken/Parsing/LemmaData.xml";
 
 
-            var fileName = myData;
+            var fileName = lemmaFile;
                 
             // Act
 

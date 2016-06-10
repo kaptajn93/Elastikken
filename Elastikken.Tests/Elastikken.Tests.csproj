@@ -73,6 +73,7 @@
     <Compile Include="ElasticManagerTests.cs" />
     <Compile Include="LemmaParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolrConfigTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NLog.config">

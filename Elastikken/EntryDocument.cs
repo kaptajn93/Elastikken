@@ -86,7 +86,7 @@ namespace Elastikken
         public string PrioritizeLemmaPos { get; set; }
         public string PrioritizeLemmaRef { get; set; }
         public string PrioritizeLemmaDescRef { get; set; }
-        public string PrioritizeLemmaIfRef { get; set; }
+        public string PrioritizeLemmaIdRef { get; set; }
     }
 }
 

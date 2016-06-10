@@ -96,6 +96,7 @@
     <Compile Include="Parsing\ParsingException.cs" />
     <Compile Include="Parsing\Extensions\XElementExtensionMethods.cs" />
     <Compile Include="Parsing\Entry\EntrySubsenseElement.cs" />
+    <Compile Include="Parsing\SolrConfig.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

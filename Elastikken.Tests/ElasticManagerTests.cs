@@ -26,7 +26,7 @@ namespace Elastikken.Tests
 
         [Theory]
         [InlineData("da")]
-        [InlineData("en")]
+        [InlineData("sp")]
         public void CanUpdateIndex(string indexName)
         {
             //Delete
@@ -73,7 +73,13 @@ namespace Elastikken.Tests
                         .Index(FieldIndexOption.NotAnalyzed))
                     .Nested<EntryIdLemma>(el => el
                         .Name(na => na.EntryIdLemma)
-                        .AutoMap()))
+                        .AutoMap()
+                    )
+                    .Nested<PrioritizeWhenLemma>(pr => pr
+                        .Name(n => n.PrioritizeWhenLemma)
+                        .AutoMap()
+                    )
+                )
 
             #region ---Nested entryID/Head/Body
 
@@ -88,7 +94,6 @@ namespace Elastikken.Tests
                 //        .Name(n => n.Body)
                 //        .AutoMap() 
             #endregion
-
 
             #region ---Sense---
 
@@ -116,7 +121,7 @@ namespace Elastikken.Tests
                 //)
             #endregion
 
-                );
+            );
             Assert.True(response1.Acknowledged, response1.ServerError?.ToString() ?? response1.DebugInformation);
         }
 

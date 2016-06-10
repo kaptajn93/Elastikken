@@ -494,10 +494,12 @@ namespace Elastikken.Tests
 
             var fileName =
                 //"C:/Users/hsm/Documents/Visual Studio 2015/Projects/Elastikken/Elastikken/Parsing/EntryData.xml";
-                "C:/Users/hsm/Desktop/Lemma fuldt feed/feed-fuldt-sommer14_Dansk/entry-dan-sko.xml";
+                //"C:/Users/hsm/Desktop/Lemma fuldt feed/Test/Entry.xml";
+                "C:/Users/hsm/Desktop/2014.07.21 (fuldt feed)/Feed-Spansk_020914/entry-spda-sko.xml";
+
             // Act
             var documents = _parser.ParseXml(new List<string> {fileName});
-            var tryAddEntry = _manager.AddEntryData(documents.ToList(), "da");
+            var tryAddEntry = _manager.AddEntryData(documents.ToList(), "sp");
 
             Assert.NotNull(documents);
             Assert.True(tryAddEntry);
