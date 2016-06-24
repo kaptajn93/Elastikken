@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
+using Elastikken.Parsing.Entry;
 using Newtonsoft.Json;
 using NLog;
 
@@ -19,7 +20,6 @@ namespace Elastikken.Parsing
             {
                 var entries = from entryXElement in elements
                               let entry = new EntryElement(entryXElement)
-
                               where entry != null
 
                               let filename = entryXElement.Attributes("filename").FirstOrDefault()
@@ -31,14 +31,14 @@ namespace Elastikken.Parsing
                                   IdBook = entry.BookId,
                                   
                                   Unbound = entry.Unbound,
-                                  PrioritizeWhenLemma = new PrioritizeWhenLemma
+                                  PrioritizeWhenLemma = entry.PrioritizeWhenLemma.Select(s =>
+                                  new PrioritizeWhenLemma
                                   {
-                                      PrioritizeLemmaPos = entry.PrioritizeWhenLemmaLemmaPos,
-                                      PrioritizeLemmaRef = entry.PrioritizeWhenLemmaLemmaRef,
-                                      PrioritizeLemmaDescRef = entry.PrioritizeWhenLemmaLemmaDescription,
-                                      PrioritizeLemmaIdRef = entry.PrioritizeWhenLemmaLemmaIdRef
-
-                                  },
+                                      PrioritizeLemmaPos = entry.PrioritizeWhenLemma?.FirstOrDefault()?.PrioritizeWhenLemmaLemmaPos,
+                                      PrioritizeLemmaRef = entry.PrioritizeWhenLemma?.FirstOrDefault()?.PrioritizeWhenLemmaLemmaRef,
+                                      PrioritizeLemmaDescRef = entry.PrioritizeWhenLemma?.FirstOrDefault()?.PrioritizeWhenLemmaLemmaDescription,
+                                      PrioritizeLemmaIdRef = entry.PrioritizeWhenLemma?.FirstOrDefault()?.PrioritizeWhenLemmaLemmaIdRef
+                                  }).ToList(),
 
                                   //idLemma
                                   EntryIdLemma = new EntryIdLemma

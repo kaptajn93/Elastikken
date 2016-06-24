@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using Nest;
 using NLog;
 
 namespace Elastikken.Parsing.Lemma
@@ -187,7 +188,10 @@ namespace Elastikken.Parsing.Lemma
 
                                   IllustrationsCount = ill.LemmaillFiles?.Count ?? 0,
                                   SoundfilesCount = pro.LemmaPronunciationVariant?.Select(pv => pv.LemmaPronunciation?.Select(pr => 
-                                        pr.LemmaSoundFile)).Count() ?? 0
+                                        pr.LemmaSoundFile)).Count() ?? 0,
+
+
+                                  
 
                               };
                 return entries;

@@ -68,6 +68,7 @@
     <Compile Include="Parsing\Entry\EntryParser.cs" />
     <Compile Include="Parsing\Entry\EntrySenseElement.cs" />
     <Compile Include="Parsing\Entry\EntryTargetGroupElement.cs" />
+    <Compile Include="Parsing\Entry\PrioritizeWhenLemmaElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaAbbBlindRefElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaAbbRefElement.cs" />
     <Compile Include="Parsing\Lemma\LemmaAccessoryDataElement.cs" />

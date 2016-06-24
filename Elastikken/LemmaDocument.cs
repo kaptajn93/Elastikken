@@ -10,13 +10,23 @@ using Nest;
 
 namespace Elastikken
 {
+    public abstract class BaseDocument
+    {
+        public DateTime TimeStamp { get; set; }
+
+        protected BaseDocument()
+        {
+            TimeStamp = DateTime.UtcNow;
+        }
+    }
+
     [Nest.ElasticsearchType]
-    public class LemmaDocument
+    public class LemmaDocument : BaseDocument
     {
         /// <summary>
         ///     Afspejler documentet som skal indsættes i ElasaticSearch
         /// </summary>
-        public LemmaDocument()
+        public LemmaDocument() 
         {
             LemmaPos = new LemmaPos();
             LemmaGender = new LemmaGender();
@@ -27,12 +37,11 @@ namespace Elastikken
             PronuciatetionAll = new LemmaPronuciatetionAll();
             Illustration = new LemmaIllustration();
             AbbreviationFor = new LemmaAbbreviationFor();
-            
+
         }
 
         public LemmaDocument(string id) : this()
         {
-           
         }
 
 
@@ -53,7 +62,6 @@ namespace Elastikken
 
         public int SoundfilesCount { get; set; }
         public int IllustrationsCount { get; set; }
-
     }
 
 }

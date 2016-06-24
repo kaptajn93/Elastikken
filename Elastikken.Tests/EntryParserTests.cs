@@ -499,7 +499,7 @@ namespace Elastikken.Tests
 
             // Act
             var documents = _parser.ParseXml(new List<string> {fileName});
-            var tryAddEntry = _manager.AddEntryData(documents.ToList(), "sp");
+            var tryAddEntry = _manager.AddEntryData(documents.ToList(), "da");
 
             Assert.NotNull(documents);
             Assert.True(tryAddEntry);

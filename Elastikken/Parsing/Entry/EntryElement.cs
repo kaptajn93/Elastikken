@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Linq;
+using Elastikken.Parsing.Entry;
 
 namespace Elastikken.Parsing
 {
@@ -47,27 +48,19 @@ namespace Elastikken.Parsing
 
                 Unbound = (id.Element("unbound") != null);
 
-                // TODO: Handle multiple prioritize-when-lemma's?
-                id.Element("prioritize-when-lemma").WhenNotNull(pri =>
-                {
-                    PrioritizeWhenLemmaLemmaPos = pri.AttributeValueOrDefault("lemma-pos");
-                    PrioritizeWhenLemmaLemmaRef = pri.AttributeValueOrDefault("lemma-ref");
-                    PrioritizeWhenLemmaLemmaDescription = pri.AttributeValueOrDefault("lemma-description-ref");
-                    PrioritizeWhenLemmaLemmaIdRef = pri.AttributeValueOrDefault("lemmaid-ref");
-                });
+                PrioritizeWhenLemma = id.ChildXElementsOfExtensionType("prioritize-when-lemma",
+                    x => new PrioritizeWhenLemmaElement(x));
+
             });
         }
-
-
-
 
         private void ParseHead(XElement entryElement)
         {
             entryElement.Element("head").WhenNotNull(id =>
             {
                 HeadWord = id.ChildElementValueOrDefault<string>("headword");
-                
-                
+
+
                 id.Element("pos").WhenNotNull(i =>
                 {
                     HeadPosShortNameGyl = i.AttributeValueOrDefault("short-name-gyl");
@@ -119,10 +112,8 @@ namespace Elastikken.Parsing
         #endregion
 
         public bool Unbound { get; set; }
-        public string PrioritizeWhenLemmaLemmaIdRef { get; set; }
-        public string PrioritizeWhenLemmaLemmaDescription { get; set; }
-        public string PrioritizeWhenLemmaLemmaRef { get; set; }
-        public string PrioritizeWhenLemmaLemmaPos { get; set; }
+
+        public IList<PrioritizeWhenLemmaElement> PrioritizeWhenLemma { get; set; }
 
         #region ---head---
         public string HeadPosShortNameGyl { get; set; }
@@ -174,7 +165,7 @@ namespace Elastikken.Parsing
 
         #endregion
 
-       
+
     }
 
 }

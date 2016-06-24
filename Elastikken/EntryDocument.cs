@@ -16,7 +16,7 @@ namespace Elastikken
     ///     Afspejler documentet som skal indsættes i ElasaticSearch
     /// </summary>
     [Nest.ElasticsearchType]
-    public class EntryDocument
+    public class EntryDocument : BaseDocument
     {
         public EntryDocument()
         {
@@ -40,7 +40,8 @@ namespace Elastikken
         // /id
 
         public bool Unbound { get; set; }
-        public PrioritizeWhenLemma PrioritizeWhenLemma { get; set; }
+        public IList<PrioritizeWhenLemma> PrioritizeWhenLemma { get; set; }
+
 
         //head
 

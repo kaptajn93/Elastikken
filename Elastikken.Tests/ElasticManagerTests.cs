@@ -79,48 +79,46 @@ namespace Elastikken.Tests
                         .Name(n => n.PrioritizeWhenLemma)
                         .AutoMap()
                     )
-                )
 
+                )
             #region ---Nested entryID/Head/Body
 
-                //.Properties(pe => pe
-                //    .Nested<EntryId>(ne => ne
-                //        .Name(nae => nae.EntryId)
-                //        .AutoMap())
-                //    .Nested<Head>(nh => nh
-                //        .Name(nu => nu.Head)
-                //        .AutoMap())
-                //    .Nested<Body>(nb => nb
-                //        .Name(n => n.Body)
-                //        .AutoMap() 
+//.Properties(pe => pe
+//    .Nested<EntryId>(ne => ne
+//        .Name(nae => nae.EntryId)
+//        .AutoMap())
+//    .Nested<Head>(nh => nh
+//        .Name(nu => nu.Head)
+//        .AutoMap())
+//    .Nested<Body>(nb => nb
+//        .Name(n => n.Body)
+//        .AutoMap() 
             #endregion
-
             #region ---Sense---
 
-                //.Properties(p => p
-                //    .Nested<EntrySenseElement>(se => se
-                //.Name(n => n.Sense)
-                //.AutoMap()
-                //.Properties(pr => pr
-                //    .Nested<EntrySubsenseElement>(s => s
-                //        .Name(n => n.Subsense)
-                //        .AutoMap()
-                //        .Properties(pro => pro
-                //            .Nested<EntryTargetGroupElement>(t => t
-                //                .Name(n => n.TargetGroups)
-                //                .AutoMap()
-                //                .Properties(pat => pat
-                //                    .Nested<EntryAnnotatedTargetElement>(at => at
-                //                        .Name(n => n.AnnotatedTargets)
-                //                        .AutoMap())))
-                //        )
-                //    )
-                //) 
+//.Properties(p => p
+//    .Nested<EntrySenseElement>(se => se
+//.Name(n => n.Sense)
+//.AutoMap()
+//.Properties(pr => pr
+//    .Nested<EntrySubsenseElement>(s => s
+//        .Name(n => n.Subsense)
+//        .AutoMap()
+//        .Properties(pro => pro
+//            .Nested<EntryTargetGroupElement>(t => t
+//                .Name(n => n.TargetGroups)
+//                .AutoMap()
+//                .Properties(pat => pat
+//                    .Nested<EntryAnnotatedTargetElement>(at => at
+//                        .Name(n => n.AnnotatedTargets)
+//                        .AutoMap())))
+//        )
+//    )
+//) 
 
-                //)
-                //)
+//)
+//)
             #endregion
-
             );
             Assert.True(response1.Acknowledged, response1.ServerError?.ToString() ?? response1.DebugInformation);
         }
@@ -280,8 +278,8 @@ namespace Elastikken.Tests
                 .Explain(true)
                 .Fields(f => f.Field("headWord"))
                 .Query(q =>
-                q.Bool(b=> b.Filter(bf =>bf.QueryString(qs => qs.Query(text))))
-                       )   
+                q.Bool(b => b.Filter(bf => bf.QueryString(qs => qs.Query(text))))
+                       )
             );
             return response.Documents.FirstOrDefault();
         }
